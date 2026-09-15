@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Financial OS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ AUTH ============ -->
+<div id="authView" class="auth-shell">
+  <div class="auth-card anim-up">
+    <div class="brand-mark">FO</div>
+    <p class="eyebrow">PRIVATE FINANCIAL SYSTEM</p>
+    <h1>Financial <em>OS</em></h1>
+    <p class="muted">A refined command center for your money.</p>
+    <form id="loginForm">
+      <label>Email<input id="email" type="email" required placeholder="you@example.com"></label>
+      <label>Password<input id="password" type="password" required placeholder="••••••••"></label>
+      <button class="primary full" type="submit">Enter Financial OS</button>
+      <p id="loginError" class="error"></p>
+    </form>
+  </div>
+</div>
+
+<!-- ============ APP ============ -->
+<div id="appView" class="app hidden">
+
+  <!-- FLOATING TOP NAV -->
+  <header class="topnav">
+    <div class="topnav-inner">
+      <div class="brand">
+        <span>FO</span>
+        <div><strong>Financial OS</strong><small>Private finance</small></div>
+      </div>
+
+      <nav class="nav-scroll" id="mainNav">
+        <button class="nav active" data-page="dashboard">Overview</button>
+        <button class="nav" data-page="transactions">Transactions</button>
+        <button class="nav" data-page="forecast">Forecast</button>
+        <button class="nav" data-page="analytics">Analytics</button>
+        <button class="nav" data-page="owners">Owners</button>
+        <button class="nav" data-page="storages">Storages</button>
+        <button class="nav" data-page="categories">Categories</button>
+        <button class="nav" data-page="recurring">Recurring</button>
+        <button class="nav" data-page="loans">Loans</button>
+        <button class="nav" data-page="calendar">Calendar</button>
+      </nav>
+
+      <div class="topnav-actions">
+        <select id="contextSelect" class="context-select" title="Filtrer par propriétaire"></select>
+        <input id="globalSearch" class="global-search" placeholder="Search…" type="search">
+        <button id="exportBtn" class="ghost icon-btn" title="Export CSV">↓</button>
+        <button id="settingsBtn" class="ghost icon-btn" title="Settings">⚙</button>
+        <button id="logoutBtn" class="ghost icon-btn" title="Sign out">⎋</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- ============ DASHBOARD ============ -->
+    <section id="dashboard" class="page">
+      <div class="page-head anim-up">
+        <div>
+          <p class="eyebrow">FINANCIAL COMMAND CENTER</p>
+          <h2 class="page-title">Overview</h2>
+        </div>
+        <button id="newTxBtn" class="primary">+ New transaction</button>
+      </div>
+
+      <div class="hero-grid anim-up">
+        <div class="hero-card">
+          <p class="label">NET WORTH</p>
+          <div id="netWorth" class="hero-number">0 Ar</div>
+          <p class="muted" id="contextLabel">All accounts</p>
+        </div>
+        <div class="metric stagger-1"><span>Liquid assets</span><strong id="liquidity">0 Ar</strong></div>
+        <div class="metric stagger-2"><span>Receivables</span><strong id="receivables">0 Ar</strong></div>
+        <div class="metric stagger-3"><span>Debts</span><strong id="debts">0 Ar</strong></div>
+      </div>
+
+      <div class="stats anim-up">
+        <div class="stat stagger-1"><span>This month · income</span><strong id="monthIncome">+0 Ar</strong></div>
+        <div class="stat stagger-2"><span>This month · expenses</span><strong id="monthExpense">−0 Ar</strong></div>
+        <div class="stat stagger-3"><span>Cash flow</span><strong id="cashFlow">0 Ar</strong></div>
+        <div class="stat stagger-4"><span>Savings rate</span><strong id="savingsRate">—</strong></div>
+      </div>
+
+      <div class="panel anim-up">
+        <div class="panel-head"><div><p class="eyebrow">ALERTS</p><h3>Signals</h3></div></div>
+        <div id="alertsList" class="alerts"></div>
+      </div>
+
+      <div class="grid-2 anim-up">
+        <div class="panel">
+          <div class="panel-head"><div><p class="eyebrow">EVOLUTION</p><h3>Cash position</h3></div></div>
+          <canvas id="cashChart"></canvas>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><div><p class="eyebrow">ALLOCATION</p><h3>Expenses by category</h3></div></div>
+          <canvas id="categoryChart"></canvas>
+        </div>
+      </div>
+
+      <div class="panel anim-up">
+        <div class="panel-head">
+          <div><p class="eyebrow">QUICK VIEW</p><h3>Latest movements</h3></div>
+          <button class="text-btn" data-page-link="transactions">View all</button>
+        </div>
+        <div id="quickTransactions" class="movement-list"></div>
+      </div>
+    </section>
+
+    <!-- ============ TRANSACTIONS ============ -->
+    <section id="transactions" class="page hidden">
+      <div class="page-head anim-up">
+        <div><p class="eyebrow">HISTORY</p><h2 class="page-title">Transactions</h2></div>
+        <button id="newTxBtn2" class="primary">+ New transaction</button>
+      </div>
+
+      <div class="quick-filters anim-up" id="quickFilters">
+        <button class="chip active" data-range="today">Today</button>
+        <button class="chip" data-range="week">This week</button>
+        <button class="chip" data-range="month">This month</button>
+        <button class="chip" data-range="prev-month">Prev. month</button>
+        <button class="chip" data-range="year">This year</button>
+        <button class="chip" data-range="all">All</button>
+      </div>
+
+      <div class="toolbar anim-up">
+        <input id="searchTx" placeholder="Search reason, category…">
+        <select id="typeFilter">
+          <option value="">All types</option>
+          <option value="income">Income</option>
+          <option value="expense">Expenses</option>
+          <option value="transfer">Transfers</option>
+          <option value="loan">Loans</option>
+          <option value="gift">Gifts</option>
+        </select>
+        <select id="statusFilter">
+          <option value="">All statuses</option>
+          <option value="completed">Completed</option>
+          <option value="planned">Planned</option>
+          <option value="cancelled">Cancelled</option>
+        </select>
+        <input id="fromDate" type="date">
+        <input id="toDate" type="date">
+      </div>
+
+      <div class="panel anim-up"><div id="transactionsTable"></div></div>
+    </section>
+
+    <!-- ============ FORECAST ============ -->
+    <section id="forecast" class="page hidden">
+      <div class="page-head anim-up">
+        <div><p class="eyebrow">PROJECTION</p><h2 class="page-title">Forecast</h2></div>
+      </div>
+      <div class="forecast-cards anim-up">
+        <div class="metric"><span>7 days</span><strong id="f7">—</strong></div>
+        <div class="metric"><span>30 days</span><strong id="f30">—</strong></div>
+        <div class="metric"><span>90 days</span><strong id="f90">—</strong></div>
+        <div class="metric"><span>12 months</span><strong id="f365">—</strong></div>
+      </div>
+      <div class="panel anim-up">
+        <p class="eyebrow">TREASURY CURVE</p>
+        <h3 style="margin-bottom:16px">Projected liquidity</h3>
+        <canvas id="forecastChart"></canvas>
+        <div id="forecastWarnings" class="warnings"></div>
+      </div>
+    </section>
+
+    <!-- ============ ANALYTICS ============ -->
+    <section id="analytics" class="page hidden">
+      <div class="page-head anim-up">
+        <div><p class="eyebrow">ANALYTICS</p><h2 class="page-title">Analytics</h2></div>
+      </div>
+      <div class="grid-2 anim-up">
+        <div class="panel">
+          <p class="eyebrow">MONTHLY</p>
+          <h3 style="margin-bottom:16px">Income vs expenses</h3>
+          <canvas id="incomeExpenseChart"></canvas>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">BEHAVIOUR</p>
+          <h3 style="margin-bottom:16px">Key indicators</h3>
+          <div id="analyticsList" class="insights"></div>
+        </div>
+      </div>
+      <div class="grid-2 anim-up">
+        <div class="panel">
+          <p class="eyebrow">INCOME</p>
+          <h3 style="margin-bottom:16px">By category</h3>
+          <canvas id="incomeCategoryChart"></canvas>
+        </div>
+        <div class="panel">
+          <p class="eyebrow">EXPENSES</p>
+          <h3 style="margin-bottom:16px">By category</h3>
+          <canvas id="expenseCategoryChart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ OWNERS ============ -->
+    <section id="owners" class="page hidden">
+      <div class="page-head anim-up">
+        <div><p class="eyebrow">ENTITIES</p><h2 class="page-title">Owners</h2></div>
+        <button class="primary" id="addOwnerBtn">+ Add owner</button>
+      </div>
+      <div id="ownersGrid" class="cards"></div>
+    </section>
+
+    <!-- ============ STORAGES ============ -->
+    <section id="storages" class="page hidden">
+      <div class="page-head anim-up">
+        <div><p class="eyebrow">LOCATIONS</p><h2 class="page-title">Storages</h2></div>
+        <button class="primary" id="addStorageBtn">+ Add storage</button>
+      </div>
+      <div id="storagesGrid" class="cards"></div>
+    </section>
+
+    <!-- ============ CATEGORIES ============ -->
+    <section id="categories" class="page hidden">
+      <div class="page-head anim-up">
+        <div><p class="eyebrow">TAXONOMY</p><h2 class="page-title">Categories</h2></div>
+        <button class="primary" id="addCategoryBtn">+ Add category</button>
+      </div>
+      <div id="categoriesGrid" class="cards"></div>
+    </section>
+
+    <!-- ============ RECURRING ============ -->
+    <section id="recurring" class="page hidden">
+      <div class="page-head anim-up">
+        <div><p class="eyebrow">RECURRING</p><h2 class="page-title">Recurring rules</h2></div>
+        <button class="primary" id="addRecurringBtn">+ Add rule</button>
+      </div>
+      <div id="recurringGrid" class="cards"></div>
+    </section>
+
+    <!-- ============ LOANS ============ -->
+    <section id="loans" class="page hidden">
+      <div class="page-head anim-up">
+        <div><p class="eyebrow">CREDIT</p><h2 class="page-title">Loans & receivables</h2></div>
+        <button class="primary" id="addLoanBtn">+ Add loan</button>
+      </div>
+      <div id="loansGrid" class="cards"></div>
+    </section>
+
+    <!-- ============ CALENDAR ============ -->
+    <section id="calendar" class="page hidden">
+      <div class="page-head anim-up">
+        <div><p class="eyebrow">SCHEDULE</p><h2 class="page-title">Financial calendar</h2></div>
+        <button class="primary" id="newPlannedBtn">+ Planned transaction</button>
+      </div>
+      <div class="panel anim-up"><div id="calendarGrid" class="calendar-grid"></div></div>
+    </section>
+
+    <!-- ============ SETTINGS ============ -->
+    <section id="settings" class="page hidden">
+      <div class="page-head anim-up">
+        <div><p class="eyebrow">ACCOUNT</p><h2 class="page-title">Settings</h2></div>
+      </div>
+      <div class="grid-2 anim-up">
+        <div class="panel">
+          <h3 style="margin-bottom:16px">Change email</h3>
+          <form id="emailForm" class="form-grid">
+            <label class="full-row">Current email<input id="currentEmail" type="email" disabled></label>
+            <label class="full-row">New email<input id="newEmail" type="email" required></label>
+            <button class="primary full-row" type="submit">Update email</button>
+            <p id="emailMsg" class="muted full-row"></p>
+          </form>
+        </div>
+        <div class="panel">
+          <h3 style="margin-bottom:16px">Change password</h3>
+          <form id="pwdForm" class="form-grid">
+            <label class="full-row">New password<input id="newPwd" type="password" required minlength="6"></label>
+            <label class="full-row">Confirm password<input id="confirmPwd" type="password" required minlength="6"></label>
+            <button class="primary full-row" type="submit">Update password</button>
+            <p id="pwdMsg" class="muted full-row"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ============ MODAL ============ -->
+<div id="modal" class="modal hidden">
+  <div class="modal-card anim-scale">
+    <button id="closeModal" class="close">×</button>
+    <div id="modalContent"></div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
