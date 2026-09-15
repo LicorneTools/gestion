@@ -5,8 +5,8 @@
 ========================================================= */
 
 /* ========== CONFIG ========== */
-const SUPABASE_URL = 'https://wdehjriprvukkadrmleo.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_CEDp94nnGylUliJW63q6wQ_uERbz9km';
+const SUPABASE_URL = 'https://rwamqiewyslvjaezvauo.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_Qze8yU3XxqI9cHaO9I1YCw_xsa7uEwu';
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 /* ========== STATE ========== */
