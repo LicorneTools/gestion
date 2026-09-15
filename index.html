@@ -21,11 +21,7 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{height:100%}
-body{
-  font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
-  background:var(--bg); color:var(--text); font-size:14px; line-height:1.5;
-  -webkit-font-smoothing:antialiased; letter-spacing:-0.01em;
-}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);font-size:14px;line-height:1.5;-webkit-font-smoothing:antialiased;letter-spacing:-0.01em}
 ::selection{background:var(--brown);color:#000}
 button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit;font-size:inherit}
 input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
@@ -39,11 +35,7 @@ input:focus,select:focus,textarea:focus{outline:none}
 .anim-scale{animation:scaleIn .3s cubic-bezier(.2,.7,.2,1) both}
 
 /* AUTH */
-.auth-shell{min-height:100dvh;display:grid;place-items:center;padding:24px;
-  background:
-    radial-gradient(ellipse at top, rgba(168,132,106,.1), transparent 60%),
-    radial-gradient(ellipse at bottom right, rgba(168,132,106,.05), transparent 50%),
-    var(--bg);}
+.auth-shell{min-height:100dvh;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at top,rgba(168,132,106,.1),transparent 60%),radial-gradient(ellipse at bottom right,rgba(168,132,106,.05),transparent 50%),var(--bg)}
 .auth-card{width:100%;max-width:400px;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:40px 32px;box-shadow:var(--shadow)}
 .brand-mark{width:52px;height:52px;border-radius:14px;background:linear-gradient(145deg,var(--brown),var(--brown-2));color:#0a0a0a;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;display:grid;place-items:center;margin-bottom:24px;letter-spacing:-0.02em}
 .eyebrow{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--brown);margin-bottom:8px}
@@ -59,7 +51,7 @@ input:focus,select:focus,textarea:focus{outline:none}
 .primary.full{width:100%;padding:14px;margin-top:8px}
 .error{color:var(--red);font-size:12px;min-height:16px}
 
-/* APP + NAV */
+/* NAV */
 .app{min-height:100dvh;padding-top:88px}
 .topnav{position:fixed;top:0;left:0;right:0;z-index:50;padding:16px 24px;pointer-events:none}
 .topnav-inner{pointer-events:auto;max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:12px;background:rgba(20,20,20,.72);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border:1px solid var(--line);border-radius:18px;padding:10px 14px;box-shadow:0 10px 40px -12px rgba(0,0,0,.6);animation:fadeUp .5s cubic-bezier(.2,.7,.2,1) both;position:relative}
@@ -78,8 +70,6 @@ input:focus,select:focus,textarea:focus{outline:none}
 .topnav-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
 .context-select{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:12px;color:var(--text);transition:border-color .2s;cursor:pointer;max-width:130px}
 .context-select:focus{border-color:var(--brown)}
-#contextSelect{max-width:130px}
-#storageSelect{max-width:130px}
 .global-search{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:12px;color:var(--text);transition:border-color .2s;width:120px}
 .global-search:focus{border-color:var(--brown)}
 .icon-btn{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:var(--muted);font-size:14px;border:1px solid var(--line);transition:all .2s;flex-shrink:0}
@@ -90,6 +80,7 @@ input:focus,select:focus,textarea:focus{outline:none}
 .page{animation:fadeUp .4s cubic-bezier(.2,.7,.2,1) both}
 .page-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:24px;flex-wrap:wrap}
 .page-title{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:44px;letter-spacing:-0.02em;line-height:1}
+.page-actions{display:flex;gap:8px;flex-wrap:wrap}
 
 .hero-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:16px;margin-bottom:16px}
 .hero-card{background:linear-gradient(160deg,var(--panel),var(--bg-2));border:1px solid var(--line);border-radius:var(--radius);padding:28px;position:relative;overflow:hidden}
@@ -108,7 +99,7 @@ input:focus,select:focus,textarea:focus{outline:none}
 
 .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:16px}
 .panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:16px}
-.panel-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;gap:12px}
+.panel-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px;gap:12px;flex-wrap:wrap}
 .panel h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;letter-spacing:-0.01em}
 .panel canvas{max-height:280px}
 .text-btn{color:var(--brown);font-size:12px;font-weight:500;transition:opacity .15s}
@@ -170,7 +161,6 @@ input:focus,select:focus,textarea:focus{outline:none}
 .insight:last-child{border-bottom:none}
 .insight strong{color:var(--text);font-weight:600;font-variant-numeric:tabular-nums}
 
-/* RECAP */
 .recap-controls{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end}
 .recap-controls label{display:grid;gap:6px;font-size:11px;color:var(--muted);font-weight:500}
 .recap-controls input{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:10px 12px;font-size:13px;color:var(--text);transition:border-color .2s;width:100%}
@@ -190,27 +180,11 @@ input:focus,select:focus,textarea:focus{outline:none}
 .delta.down{background:rgba(194,94,94,.15);color:var(--red)}
 .delta.flat{background:var(--brown-soft);color:var(--brown)}
 
-.recap-context{
-  display:flex;gap:8px;align-items:center;flex-wrap:wrap;
-  padding:14px 18px;margin-bottom:16px;
-  background:var(--panel);border:1px solid var(--line);border-radius:14px;
-  font-size:12px;color:var(--muted);
-  animation:fadeUp .3s both;
-}
-.recap-context .tag{
-  background:var(--brown-soft);color:var(--brown);
-  padding:4px 10px;border-radius:6px;
-  font-weight:600;font-size:11px;
-  display:inline-flex;align-items:center;gap:6px;
-}
-.recap-context .tag button{
-  color:var(--brown);font-size:12px;
-  width:14px;height:14px;border-radius:4px;
-  display:grid;place-items:center;
-}
+.recap-context{display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:14px 18px;margin-bottom:16px;background:var(--panel);border:1px solid var(--line);border-radius:14px;font-size:12px;color:var(--muted);animation:fadeUp .3s both}
+.recap-context .tag{background:var(--brown-soft);color:var(--brown);padding:4px 10px;border-radius:6px;font-weight:600;font-size:11px;display:inline-flex;align-items:center;gap:6px}
+.recap-context .tag button{color:var(--brown);font-size:12px;width:14px;height:14px;border-radius:4px;display:grid;place-items:center}
 .recap-context .tag button:hover{background:rgba(168,132,106,.2)}
 
-/* CALENDAR */
 .calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
 .cal-cell{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:10px;min-height:100px;font-size:11px;position:relative;transition:border-color .2s}
 .cal-cell:hover{border-color:var(--line-2)}
@@ -222,7 +196,6 @@ input:focus,select:focus,textarea:focus{outline:none}
 .cal-event.income{background:rgba(127,176,105,.15);color:#a8d09a}
 .cal-event.expense{background:rgba(194,94,94,.15);color:#e0a0a0}
 
-/* MODAL */
 .modal{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:grid;place-items:center;padding:24px;z-index:100;animation:fadeIn .2s both}
 .modal-card{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:32px;width:100%;max-width:560px;max-height:90dvh;overflow-y:auto;position:relative;box-shadow:var(--shadow)}
 .modal-card h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:28px;margin-bottom:20px;letter-spacing:-0.02em}
@@ -238,11 +211,8 @@ input:focus,select:focus,textarea:focus{outline:none}
 .empty{text-align:center;padding:60px 20px;color:var(--muted)}
 .empty h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--text);margin-bottom:8px}
 
-/* RESPONSIVE */
 @media (max-width:1300px){
-  .toolbar{grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:8px}
-  .toolbar #ownerFilter,.toolbar #storageFilter{grid-column:span 1}
-  .toolbar #fromDate,.toolbar #toDate{grid-column:span 1}
+  .toolbar{grid-template-columns:2fr 1fr 1fr 1fr 1fr}
 }
 @media (max-width:1100px){
   .hero-grid{grid-template-columns:1fr 1fr}
@@ -258,17 +228,7 @@ input:focus,select:focus,textarea:focus{outline:none}
   .brand{padding-right:10px;border-right:none}
   .brand > div{display:none}
   .nav-toggle{display:flex;order:2;margin-left:auto}
-  .nav-scroll{
-    display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;
-    flex-direction:column;background:rgba(20,20,20,.96);
-    backdrop-filter:blur(20px) saturate(1.4);
-    -webkit-backdrop-filter:blur(20px) saturate(1.4);
-    border:1px solid var(--line);border-radius:14px;padding:8px;gap:2px;
-    max-height:70dvh;overflow-y:auto;
-    box-shadow:0 20px 60px -20px rgba(0,0,0,.8);
-    animation:fadeUp .25s cubic-bezier(.2,.7,.2,1) both;z-index:60;
-    order:10;width:100%;
-  }
+  .nav-scroll{display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;flex-direction:column;background:rgba(20,20,20,.96);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border:1px solid var(--line);border-radius:14px;padding:8px;gap:2px;max-height:70dvh;overflow-y:auto;box-shadow:0 20px 60px -20px rgba(0,0,0,.8);animation:fadeUp .25s cubic-bezier(.2,.7,.2,1) both;z-index:60;order:10;width:100%}
   .nav-scroll.open{display:flex}
   .nav-scroll .nav{padding:11px 14px;font-size:13.5px;border-radius:9px;text-align:left}
   .nav-scroll .nav.active::after{display:none}
@@ -683,10 +643,10 @@ input:focus,select:focus,textarea:focus{outline:none}
 
 <script>
 /* =========================================================
-   FINANCIAL OS — Monopage avec filtre PROPRIÉTAIRE + COMPTE
+   FINANCIAL OS — Monopage avec CRUD complet
    ========================================================= */
 
-/* CONFIG — NOUVELLES CLÉS */
+/* CONFIG */
 const SUPABASE_URL = 'https://rwamqiewyslvjaezvauo.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_Qze8yU3XxqI9cHaO9I1YCw_xsa7uEwu';
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
@@ -853,7 +813,7 @@ function buildToolbarFilters(){
   sf.value = state.filters.storage || '';
 }
 
-/* FILTRE CONTEXTUEL CROISÉ */
+/* FILTRE CONTEXTUEL */
 function inContext(tx){
   if(state.contextOwnerId
      && tx.owner_id !== state.contextOwnerId
@@ -910,13 +870,9 @@ function renderAll(){
 function renderDashboard(){
   const txs = state.transactions.filter(inContext);
   const completed = txs.filter(t => t.status === 'completed');
-
-  let liquidity = 0;
-  if(state.contextStorageId){
-    liquidity = storageBalance(state.contextStorageId);
-  } else {
-    liquidity = state.storages.reduce((s,x) => s + storageBalance(x.id), 0);
-  }
+  let liquidity = state.contextStorageId
+    ? storageBalance(state.contextStorageId)
+    : state.storages.reduce((s,x) => s + storageBalance(x.id), 0);
 
   const income  = completed.filter(t => t.transaction_type==='income'  && t.transaction_date >= monthStart())
                            .reduce((s,t) => s + Number(t.amount), 0);
@@ -1101,7 +1057,7 @@ function renderTransactions(){
     ? emptyHTML('Aucune transaction', 'Modifiez les filtres ou ajoutez un nouveau mouvement.')
     : `<div class="table-wrap"><table class="data-table"><thead><tr>
         <th>Date</th><th>Type</th><th>Catégorie</th><th>Motif</th>
-        <th>Propriétaire</th><th>Source</th><th>Destination</th><th>Montant</th><th>Statut</th>
+        <th>Propriétaire</th><th>Source</th><th>Destination</th><th>Montant</th><th>Statut</th><th></th>
       </tr></thead><tbody>${list.map(t => `<tr>
         <td>${fmtDate(t.transaction_date)}</td>
         <td>${esc(labels[t.transaction_type] || t.transaction_type)}</td>
@@ -1112,6 +1068,10 @@ function renderTransactions(){
         <td>${esc(storageName(t.destination_storage_id))}</td>
         <td>${t.transaction_type==='expense'?'−':t.transaction_type==='income'?'+':'→'}${money(t.amount)}</td>
         <td>${esc(statusLabels[t.status] || t.status)}</td>
+        <td>
+          <button class="text-btn" onclick="editTransaction('${t.id}')" title="Modifier">✎</button>
+          <button class="text-btn" onclick="deleteEntity('transactions','${t.id}')" title="Supprimer" style="color:var(--red)">✕</button>
+        </td>
       </tr>`).join('')}</tbody></table></div>`;
 }
 
@@ -1119,27 +1079,33 @@ function renderTransactions(){
 $('newTxBtn').onclick = () => transactionModal();
 $('newTxBtn2').onclick = () => transactionModal();
 $('newPlannedBtn').onclick = () => transactionModal({ status:'planned' });
-function transactionModal(defaults = {}){
-  openModal(`<h3>${defaults.status === 'planned' ? 'Transaction planifiée' : 'Nouvelle transaction'}</h3>
+
+function transactionModal(defaults = {}, existing = null){
+  const v = (k, d='') => existing ? (existing[k] ?? '') : (defaults[k] ?? d);
+  const title = existing ? 'Modifier la transaction' : (defaults.status === 'planned' ? 'Transaction planifiée' : 'Nouvelle transaction');
+  openModal(`<h3>${title}</h3>
     <form id="txForm" class="form-grid">
       <label>Type<select name="transaction_type">
-        <option value="expense">Dépense</option><option value="income">Revenu</option>
-        <option value="transfer">Transfert</option><option value="gift">Don</option><option value="loan">Prêt</option>
+        <option value="expense" ${v('transaction_type')==='expense'?'selected':''}>Dépense</option>
+        <option value="income" ${v('transaction_type')==='income'?'selected':''}>Revenu</option>
+        <option value="transfer" ${v('transaction_type')==='transfer'?'selected':''}>Transfert</option>
+        <option value="gift" ${v('transaction_type')==='gift'?'selected':''}>Don</option>
+        <option value="loan" ${v('transaction_type')==='loan'?'selected':''}>Prêt</option>
       </select></label>
-      <label>Montant<input name="amount" type="number" min="0.01" step="0.01" required></label>
-      <label>Propriétaire<select name="owner_id">${state.owners.map(o=>`<option value="${o.id}">${esc(o.name)}</option>`).join('')}</select></label>
-      <label>Contrepartie<select name="counterparty_owner_id"><option value="">Aucune</option>${state.owners.map(o=>`<option value="${o.id}">${esc(o.name)}</option>`).join('')}</select></label>
-      <label>Catégorie<select name="category_id"><option value="">Aucune</option>${state.categories.map(c=>`<option value="${c.id}">${esc(c.name)}</option>`).join('')}</select></label>
-      <label>Date<input name="transaction_date" type="date" value="${today()}"></label>
-      <label>Compte source<select name="source_storage_id"><option value="">Aucun</option>${state.storages.map(s=>`<option value="${s.id}">${esc(s.name)}</option>`).join('')}</select></label>
-      <label>Compte destination<select name="destination_storage_id"><option value="">Aucun</option>${state.storages.map(s=>`<option value="${s.id}">${esc(s.name)}</option>`).join('')}</select></label>
-      <label>Motif<input name="reason" required></label>
+      <label>Montant<input name="amount" type="number" min="0.01" step="0.01" required value="${v('amount')}"></label>
+      <label>Propriétaire<select name="owner_id">${state.owners.map(o=>`<option value="${o.id}" ${v('owner_id')===o.id?'selected':''}>${esc(o.name)}</option>`).join('')}</select></label>
+      <label>Contrepartie<select name="counterparty_owner_id"><option value="">Aucune</option>${state.owners.map(o=>`<option value="${o.id}" ${v('counterparty_owner_id')===o.id?'selected':''}>${esc(o.name)}</option>`).join('')}</select></label>
+      <label>Catégorie<select name="category_id"><option value="">Aucune</option>${state.categories.map(c=>`<option value="${c.id}" ${v('category_id')===c.id?'selected':''}>${esc(c.name)}</option>`).join('')}</select></label>
+      <label>Date<input name="transaction_date" type="date" value="${v('transaction_date', today())}"></label>
+      <label>Compte source<select name="source_storage_id"><option value="">Aucun</option>${state.storages.map(s=>`<option value="${s.id}" ${v('source_storage_id')===s.id?'selected':''}>${esc(s.name)}</option>`).join('')}</select></label>
+      <label>Compte destination<select name="destination_storage_id"><option value="">Aucun</option>${state.storages.map(s=>`<option value="${s.id}" ${v('destination_storage_id')===s.id?'selected':''}>${esc(s.name)}</option>`).join('')}</select></label>
+      <label>Motif<input name="reason" required value="${esc(v('reason'))}"></label>
       <label>Statut<select name="status">
-        <option value="completed" ${defaults.status!=='planned'?'selected':''}>Terminé</option>
-        <option value="planned" ${defaults.status==='planned'?'selected':''}>Planifié</option>
+        <option value="completed" ${v('status','completed')==='completed'?'selected':''}>Terminé</option>
+        <option value="planned" ${v('status')==='planned'?'selected':''}>Planifié</option>
       </select></label>
-      <label class="full-row">Description<textarea name="description"></textarea></label>
-      <button class="primary full-row" type="submit">Enregistrer</button>
+      <label class="full-row">Description<textarea name="description">${esc(v('description'))}</textarea></label>
+      <button class="primary full-row" type="submit">${existing ? 'Mettre à jour' : 'Enregistrer'}</button>
     </form>`);
   $('txForm').onsubmit = async e => {
     e.preventDefault();
@@ -1147,17 +1113,64 @@ function transactionModal(defaults = {}){
     row.user_id = state.user.id;
     row.amount = Number(row.amount);
     ['owner_id','counterparty_owner_id','category_id','source_storage_id','destination_storage_id'].forEach(k => row[k] = nullify(row[k]));
-    const { error } = await sb.from('transactions').insert(row);
+    let error;
+    if(existing){
+      ({ error } = await sb.from('transactions').update(row).eq('id', existing.id));
+    } else {
+      ({ error } = await sb.from('transactions').insert(row));
+    }
     if(error){ alert(error.message); return; }
     closeModal(); await loadAll();
   };
 }
 
-/* PROPRIÉTAIRES */
-$('addOwnerBtn').onclick = () => modalSimple('Nouveau propriétaire',
-  `<label>Nom<input name="name" required></label>
-   <label>Type<select name="owner_type"><option value="individual">Individu</option><option value="company">Entreprise</option><option value="other">Autre</option></select></label>
-   <label class="full-row">Description<input name="description"></label>`, 'owners');
+window.editTransaction = (id) => {
+  const tx = state.transactions.find(t => t.id === id);
+  if(tx) transactionModal({}, tx);
+};
+
+/* ========== CRUD PROPRIÉTAIRES ========== */
+$('addOwnerBtn').onclick = () => ownerModal();
+
+function ownerModal(existing = null){
+  const v = (k, d='') => existing ? (existing[k] ?? '') : d;
+  openModal(`<h3>${existing ? 'Modifier le propriétaire' : 'Nouveau propriétaire'}</h3>
+    <form id="ownerForm" class="form-grid">
+      <label>Nom<input name="name" required value="${esc(v('name'))}"></label>
+      <label>Type<select name="owner_type">
+        <option value="individual" ${v('owner_type')==='individual'?'selected':''}>Individu</option>
+        <option value="company" ${v('owner_type')==='company'?'selected':''}>Entreprise</option>
+        <option value="other" ${v('owner_type')==='other'?'selected':''}>Autre</option>
+      </select></label>
+      <label>Devise<input name="currency" value="${esc(v('currency','MGA'))}"></label>
+      <label>Statut<select name="is_active">
+        <option value="true" ${v('is_active',true)?'selected':''}>Actif</option>
+        <option value="false" ${!v('is_active',true)?'selected':''}>Inactif</option>
+      </select></label>
+      <label class="full-row">Description<input name="description" value="${esc(v('description'))}"></label>
+      <button class="primary full-row" type="submit">${existing ? 'Mettre à jour' : 'Créer'}</button>
+    </form>`);
+  $('ownerForm').onsubmit = async e => {
+    e.preventDefault();
+    const row = Object.fromEntries(new FormData(e.target));
+    row.user_id = state.user.id;
+    row.is_active = row.is_active === 'true';
+    Object.keys(row).forEach(k => { if(row[k] === '') row[k] = null; });
+    let error;
+    if(existing){
+      ({ error } = await sb.from('owners').update(row).eq('id', existing.id));
+    } else {
+      ({ error } = await sb.from('owners').insert(row));
+    }
+    if(error){ alert(error.message); return; }
+    closeModal(); await loadAll();
+  };
+}
+
+window.editOwner = (id) => {
+  const o = state.owners.find(x => x.id === id);
+  if(o) ownerModal(o);
+};
 
 function renderOwners(){
   const grid = $('ownersGrid');
@@ -1172,9 +1185,10 @@ function renderOwners(){
       <h3>${esc(o.name)}</h3>
       <p class="muted">${esc(o.description || '')}</p>
       <div class="big">${money(net)}</div>
-      <small class="muted">Position nette des mouvements</small>
+      <small class="muted">Position nette · ${esc(o.currency || 'MGA')}</small>
       <div class="card-actions">
-        <button class="primary-link" onclick="viewOwnerRecap('${o.id}')">Voir le récap →</button>
+        <button class="primary-link" onclick="viewOwnerRecap('${o.id}')">Récap →</button>
+        <button onclick="editOwner('${o.id}')">✎ Modifier</button>
         <button onclick="toggleActive('owners','${o.id}',${!o.is_active})">${o.is_active?'Désactiver':'Activer'}</button>
         <button class="danger" onclick="deleteEntity('owners','${o.id}')">Supprimer</button>
       </div>
@@ -1182,17 +1196,51 @@ function renderOwners(){
   }).join('');
 }
 
-/* COMPTES */
-$('addStorageBtn').onclick = () => modalSimple('Nouveau compte',
-  `<label>Nom<input name="name" required></label>
-   <label>Type<select name="storage_type">
-     <option value="bank">Banque</option><option value="cash">Espèces</option>
-     <option value="mobile_money">Mobile Money</option>
-     <option value="savings">Épargne</option><option value="investment">Investissement</option>
-     <option value="other">Autre</option>
-   </select></label>
-   <label>Devise<input name="currency" value="MGA"></label>
-   <label>Description<input name="description"></label>`, 'storages');
+/* ========== CRUD COMPTES ========== */
+$('addStorageBtn').onclick = () => storageModal();
+
+function storageModal(existing = null){
+  const v = (k, d='') => existing ? (existing[k] ?? '') : d;
+  openModal(`<h3>${existing ? 'Modifier le compte' : 'Nouveau compte'}</h3>
+    <form id="storageForm" class="form-grid">
+      <label>Nom<input name="name" required value="${esc(v('name'))}"></label>
+      <label>Type<select name="storage_type">
+        <option value="bank" ${v('storage_type')==='bank'?'selected':''}>Banque</option>
+        <option value="cash" ${v('storage_type')==='cash'?'selected':''}>Espèces</option>
+        <option value="mobile_money" ${v('storage_type')==='mobile_money'?'selected':''}>Mobile Money</option>
+        <option value="savings" ${v('storage_type')==='savings'?'selected':''}>Épargne</option>
+        <option value="investment" ${v('storage_type')==='investment'?'selected':''}>Investissement</option>
+        <option value="other" ${v('storage_type')==='other'?'selected':''}>Autre</option>
+      </select></label>
+      <label>Devise<input name="currency" value="${esc(v('currency','MGA'))}"></label>
+      <label>Statut<select name="is_active">
+        <option value="true" ${v('is_active',true)?'selected':''}>Actif</option>
+        <option value="false" ${!v('is_active',true)?'selected':''}>Inactif</option>
+      </select></label>
+      <label class="full-row">Description<input name="description" value="${esc(v('description'))}"></label>
+      <button class="primary full-row" type="submit">${existing ? 'Mettre à jour' : 'Créer'}</button>
+    </form>`);
+  $('storageForm').onsubmit = async e => {
+    e.preventDefault();
+    const row = Object.fromEntries(new FormData(e.target));
+    row.user_id = state.user.id;
+    row.is_active = row.is_active === 'true';
+    Object.keys(row).forEach(k => { if(row[k] === '') row[k] = null; });
+    let error;
+    if(existing){
+      ({ error } = await sb.from('storages').update(row).eq('id', existing.id));
+    } else {
+      ({ error } = await sb.from('storages').insert(row));
+    }
+    if(error){ alert(error.message); return; }
+    closeModal(); await loadAll();
+  };
+}
+
+window.editStorage = (id) => {
+  const s = state.storages.find(x => x.id === id);
+  if(s) storageModal(s);
+};
 
 function renderStorages(){
   const grid = $('storagesGrid');
@@ -1207,7 +1255,8 @@ function renderStorages(){
       <div class="big">${money(storageBalance(s.id))}</div>
       <small class="muted">${esc(s.currency)}</small>
       <div class="card-actions">
-        <button class="primary-link" onclick="viewStorageRecap('${s.id}')">Voir le récap →</button>
+        <button class="primary-link" onclick="viewStorageRecap('${s.id}')">Récap →</button>
+        <button onclick="editStorage('${s.id}')">✎ Modifier</button>
         <button onclick="toggleActive('storages','${s.id}',${!s.is_active})">${s.is_active?'Désactiver':'Activer'}</button>
         <button class="danger" onclick="deleteEntity('storages','${s.id}')">Supprimer</button>
       </div>
@@ -1231,42 +1280,116 @@ window.viewStorageRecap = (storageId) => {
   navigate('recap');
 };
 
-/* CATÉGORIES */
-$('addCategoryBtn').onclick = () => modalSimple('Nouvelle catégorie',
-  `<label>Nom<input name="name" required></label>
-   <label>Type<select name="category_type"><option value="both">Les deux</option><option value="income">Revenu</option><option value="expense">Dépense</option></select></label>
-   <label>Couleur<input name="color" value="#a8846a"></label>
-   <label>Icône<input name="icon" value="●"></label>`, 'categories');
+/* ========== CRUD CATÉGORIES ========== */
+$('addCategoryBtn').onclick = () => categoryModal();
+
+function categoryModal(existing = null){
+  const v = (k, d='') => existing ? (existing[k] ?? '') : d;
+  openModal(`<h3>${existing ? 'Modifier la catégorie' : 'Nouvelle catégorie'}</h3>
+    <form id="categoryForm" class="form-grid">
+      <label>Nom<input name="name" required value="${esc(v('name'))}"></label>
+      <label>Type<select name="category_type">
+        <option value="both" ${v('category_type')==='both'?'selected':''}>Les deux</option>
+        <option value="income" ${v('category_type')==='income'?'selected':''}>Revenu</option>
+        <option value="expense" ${v('category_type')==='expense'?'selected':''}>Dépense</option>
+      </select></label>
+      <label>Couleur<input name="color" value="${esc(v('color','#a8846a'))}"></label>
+      <label>Icône<input name="icon" value="${esc(v('icon','●'))}"></label>
+      <label>Statut<select name="is_active">
+        <option value="true" ${v('is_active',true)?'selected':''}>Actif</option>
+        <option value="false" ${!v('is_active',true)?'selected':''}>Inactif</option>
+      </select></label>
+      <button class="primary full-row" type="submit">${existing ? 'Mettre à jour' : 'Créer'}</button>
+    </form>`);
+  $('categoryForm').onsubmit = async e => {
+    e.preventDefault();
+    const row = Object.fromEntries(new FormData(e.target));
+    row.user_id = state.user.id;
+    row.is_active = row.is_active === 'true';
+    Object.keys(row).forEach(k => { if(row[k] === '') row[k] = null; });
+    let error;
+    if(existing){
+      ({ error } = await sb.from('categories').update(row).eq('id', existing.id));
+    } else {
+      ({ error } = await sb.from('categories').insert(row));
+    }
+    if(error){ alert(error.message); return; }
+    closeModal(); await loadAll();
+  };
+}
+
+window.editCategory = (id) => {
+  const c = state.categories.find(x => x.id === id);
+  if(c) categoryModal(c);
+};
 
 function renderCategories(){
   const grid = $('categoriesGrid');
   if(!state.categories.length){ grid.innerHTML = emptyHTML('Aucune catégorie', 'Regroupez vos mouvements par catégorie.'); return; }
   const types = { income:'Revenu', expense:'Dépense', both:'Les deux' };
   grid.innerHTML = state.categories.map(c => `<div class="card">
-    <span class="badge" style="border-left:3px solid ${esc(c.color)}">${esc(types[c.category_type] || c.category_type)}</span>
+    <span class="badge" style="border-left:3px solid ${esc(c.color)}">${esc(types[c.category_type] || c.category_type)}${c.is_active?'':' · inactif'}</span>
     <h3>${esc(c.icon || '●')} ${esc(c.name)}</h3>
     <p class="muted">${esc(c.color)}</p>
     <div class="card-actions">
+      <button onclick="editCategory('${c.id}')">✎ Modifier</button>
       <button class="danger" onclick="deleteEntity('categories','${c.id}')">Supprimer</button>
     </div>
   </div>`).join('');
 }
 
-/* RÉCURRENCES */
-$('addRecurringBtn').onclick = () => modalSimple('Nouvelle règle récurrente',
-  `<label>Motif<input name="reason" required></label>
-   <label>Montant<input name="amount" type="number" step="0.01" required></label>
-   <label>Type<select name="transaction_type"><option value="expense">Dépense</option><option value="income">Revenu</option></select></label>
-   <label>Fréquence<select name="frequency">
-     <option value="daily">Quotidien</option><option value="weekly">Hebdomadaire</option>
-     <option value="monthly">Mensuel</option><option value="yearly">Annuel</option>
-   </select></label>
-   <label>Date de début<input name="start_date" type="date" value="${today()}"></label>
-   <label>Date de fin<input name="end_date" type="date"></label>
-   <label>Jour du mois<input name="day_of_month" type="number" min="1" max="31"></label>
-   <label>Propriétaire<select name="owner_id"><option value="">Aucun</option>${state.owners.map(o=>`<option value="${o.id}">${esc(o.name)}</option>`).join('')}</select></label>
-   <label>Compte<select name="source_storage_id"><option value="">Aucun</option>${state.storages.map(s=>`<option value="${s.id}">${esc(s.name)}</option>`).join('')}</select></label>`,
-  'recurring_rules');
+/* ========== CRUD RÉCURRENCES ========== */
+$('addRecurringBtn').onclick = () => recurringModal();
+
+function recurringModal(existing = null){
+  const v = (k, d='') => existing ? (existing[k] ?? '') : d;
+  openModal(`<h3>${existing ? 'Modifier la règle' : 'Nouvelle règle récurrente'}</h3>
+    <form id="recurringForm" class="form-grid">
+      <label>Motif<input name="reason" required value="${esc(v('reason'))}"></label>
+      <label>Montant<input name="amount" type="number" step="0.01" required value="${v('amount')}"></label>
+      <label>Type<select name="transaction_type">
+        <option value="expense" ${v('transaction_type')==='expense'?'selected':''}>Dépense</option>
+        <option value="income" ${v('transaction_type')==='income'?'selected':''}>Revenu</option>
+      </select></label>
+      <label>Fréquence<select name="frequency">
+        <option value="daily" ${v('frequency')==='daily'?'selected':''}>Quotidien</option>
+        <option value="weekly" ${v('frequency')==='weekly'?'selected':''}>Hebdomadaire</option>
+        <option value="monthly" ${v('frequency')==='monthly'?'selected':''}>Mensuel</option>
+        <option value="yearly" ${v('frequency')==='yearly'?'selected':''}>Annuel</option>
+      </select></label>
+      <label>Date de début<input name="start_date" type="date" value="${v('start_date', today())}"></label>
+      <label>Date de fin<input name="end_date" type="date" value="${v('end_date')}"></label>
+      <label>Jour du mois<input name="day_of_month" type="number" min="1" max="31" value="${v('day_of_month')}"></label>
+      <label>Propriétaire<select name="owner_id"><option value="">Aucun</option>${state.owners.map(o=>`<option value="${o.id}" ${v('owner_id')===o.id?'selected':''}>${esc(o.name)}</option>`).join('')}</select></label>
+      <label>Compte source<select name="source_storage_id"><option value="">Aucun</option>${state.storages.map(s=>`<option value="${s.id}" ${v('source_storage_id')===s.id?'selected':''}>${esc(s.name)}</option>`).join('')}</select></label>
+      <label>Statut<select name="is_active">
+        <option value="true" ${v('is_active',true)?'selected':''}>Actif</option>
+        <option value="false" ${!v('is_active',true)?'selected':''}>Inactif</option>
+      </select></label>
+      <button class="primary full-row" type="submit">${existing ? 'Mettre à jour' : 'Créer'}</button>
+    </form>`);
+  $('recurringForm').onsubmit = async e => {
+    e.preventDefault();
+    const row = Object.fromEntries(new FormData(e.target));
+    row.user_id = state.user.id;
+    row.amount = Number(row.amount);
+    row.is_active = row.is_active === 'true';
+    ['owner_id','category_id','source_storage_id','destination_storage_id','end_date','day_of_month','day_of_week'].forEach(k => row[k] = nullify(row[k]));
+    let error;
+    if(existing){
+      ({ error } = await sb.from('recurring_rules').update(row).eq('id', existing.id));
+    } else {
+      ({ error } = await sb.from('recurring_rules').insert(row));
+    }
+    if(error){ alert(error.message); return; }
+    closeModal(); await loadAll();
+  };
+}
+
+window.editRecurring = (id) => {
+  const r = state.recurring.find(x => x.id === id);
+  if(r) recurringModal(r);
+};
 
 function renderRecurring(){
   const grid = $('recurringGrid');
@@ -1278,21 +1401,58 @@ function renderRecurring(){
     <div class="big">${money(r.amount)}</div>
     <small class="muted">${fmtDate(r.start_date)}${r.end_date?' → '+fmtDate(r.end_date):' · en cours'}</small>
     <div class="card-actions">
+      <button onclick="editRecurring('${r.id}')">✎ Modifier</button>
       <button onclick="toggleActive('recurring_rules','${r.id}',${!r.is_active})">${r.is_active?'Désactiver':'Activer'}</button>
       <button class="danger" onclick="deleteEntity('recurring_rules','${r.id}')">Supprimer</button>
     </div>
   </div>`).join('');
 }
 
-/* PRÊTS */
-$('addLoanBtn').onclick = () => modalSimple('Nouveau prêt',
-  `<label>Prêteur<select name="lender_owner_id">${state.owners.map(o=>`<option value="${o.id}">${esc(o.name)}</option>`).join('')}</select></label>
-   <label>Emprunteur<select name="borrower_owner_id">${state.owners.map(o=>`<option value="${o.id}">${esc(o.name)}</option>`).join('')}</select></label>
-   <label>Montant<input name="principal_amount" type="number" step="0.01" required></label>
-   <label>Date du prêt<input name="loan_date" type="date" value="${today()}"></label>
-   <label>Échéance<input name="due_date" type="date"></label>
-   <label>Motif<input name="reason"></label>`,
-  'loans');
+/* ========== CRUD PRÊTS ========== */
+$('addLoanBtn').onclick = () => loanModal();
+
+function loanModal(existing = null){
+  const v = (k, d='') => existing ? (existing[k] ?? '') : d;
+  openModal(`<h3>${existing ? 'Modifier le prêt' : 'Nouveau prêt'}</h3>
+    <form id="loanForm" class="form-grid">
+      <label>Prêteur<select name="lender_owner_id">${state.owners.map(o=>`<option value="${o.id}" ${v('lender_owner_id')===o.id?'selected':''}>${esc(o.name)}</option>`).join('')}</select></label>
+      <label>Emprunteur<select name="borrower_owner_id">${state.owners.map(o=>`<option value="${o.id}" ${v('borrower_owner_id')===o.id?'selected':''}>${esc(o.name)}</option>`).join('')}</select></label>
+      <label>Montant<input name="principal_amount" type="number" step="0.01" required value="${v('principal_amount')}"></label>
+      <label>Déjà remboursé<input name="repaid_amount" type="number" step="0.01" value="${v('repaid_amount', 0)}"></label>
+      <label>Date du prêt<input name="loan_date" type="date" value="${v('loan_date', today())}"></label>
+      <label>Échéance<input name="due_date" type="date" value="${v('due_date')}"></label>
+      <label>Motif<input name="reason" value="${esc(v('reason'))}"></label>
+      <label>Statut<select name="status">
+        <option value="active" ${v('status')==='active'?'selected':''}>Actif</option>
+        <option value="partially_paid" ${v('status')==='partially_paid'?'selected':''}>Partiellement remboursé</option>
+        <option value="paid" ${v('status')==='paid'?'selected':''}>Remboursé</option>
+        <option value="overdue" ${v('status')==='overdue'?'selected':''}>En retard</option>
+        <option value="cancelled" ${v('status')==='cancelled'?'selected':''}>Annulé</option>
+      </select></label>
+      <button class="primary full-row" type="submit">${existing ? 'Mettre à jour' : 'Créer'}</button>
+    </form>`);
+  $('loanForm').onsubmit = async e => {
+    e.preventDefault();
+    const row = Object.fromEntries(new FormData(e.target));
+    row.user_id = state.user.id;
+    row.principal_amount = Number(row.principal_amount);
+    row.repaid_amount = Number(row.repaid_amount || 0);
+    ['source_storage_id','destination_storage_id','due_date','reason'].forEach(k => row[k] = nullify(row[k]));
+    let error;
+    if(existing){
+      ({ error } = await sb.from('loans').update(row).eq('id', existing.id));
+    } else {
+      ({ error } = await sb.from('loans').insert(row));
+    }
+    if(error){ alert(error.message); return; }
+    closeModal(); await loadAll();
+  };
+}
+
+window.editLoan = (id) => {
+  const l = state.loans.find(x => x.id === id);
+  if(l) loanModal(l);
+};
 
 function renderLoans(){
   const grid = $('loansGrid');
@@ -1307,7 +1467,8 @@ function renderLoans(){
       <div class="big">${money(remaining)}</div>
       <small class="muted">${l.due_date?'Échéance '+fmtDate(l.due_date):'Sans échéance'}</small>
       <div class="card-actions">
-        <button onclick="repayLoan('${l.id}',${remaining})">Ajouter un remboursement</button>
+        <button onclick="repayLoan('${l.id}',${remaining})">Rembourser</button>
+        <button onclick="editLoan('${l.id}')">✎ Modifier</button>
         <button class="danger" onclick="deleteEntity('loans','${l.id}')">Supprimer</button>
       </div>
     </div>`;
@@ -1349,24 +1510,6 @@ window.deleteEntity = async (table, id) => {
   if(error){ alert(error.message); return; }
   await loadAll();
 };
-
-/* MODAL SIMPLE */
-function modalSimple(title, fields, table){
-  openModal(`<h3>${title}</h3>
-    <form id="simpleForm" class="form-grid">
-      ${fields}
-      <button class="primary full-row">Enregistrer</button>
-    </form>`);
-  $('simpleForm').onsubmit = async e => {
-    e.preventDefault();
-    const row = Object.fromEntries(new FormData(e.target));
-    row.user_id = state.user.id;
-    Object.keys(row).forEach(k => { if(row[k] === '') row[k] = null; });
-    const { error } = await sb.from(table).insert(row);
-    if(error){ alert(error.message); return; }
-    closeModal(); await loadAll();
-  };
-}
 
 /* PRÉVISIONS */
 function projectedBalance(days){
@@ -1533,7 +1676,6 @@ function deltaBadge(current, previous){
 function daysBetween(from, to){
   return Math.max(1, Math.round((new Date(to) - new Date(from)) / 86400000) + 1);
 }
-
 function renderRecapContext(){
   const owner = state.owners.find(o => o.id === state.contextOwnerId);
   const storage = state.storages.find(s => s.id === state.contextStorageId);
@@ -1565,7 +1707,6 @@ window.clearStorageContext = () => {
   initRecapInputs();
   renderRecap();
 };
-
 function renderRecap(){
   initRecapInputs();
   renderRecapContext();
@@ -1779,7 +1920,6 @@ $('modal').onclick = e => { if(e.target.id === 'modal') closeModal(); };
 
 /* DÉMARRAGE */
 init();
-updateContextLabel();
 </script>
 </body>
 </html>
