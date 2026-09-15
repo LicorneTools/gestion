@@ -686,9 +686,9 @@ input:focus,select:focus,textarea:focus{outline:none}
    FINANCIAL OS — Monopage avec filtre PROPRIÉTAIRE + COMPTE
    ========================================================= */
 
-/* CONFIG */
-const SUPABASE_URL = 'https://wdehjriprvukkadrmleo.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_CEDp94nnGylUliJW63q6wQ_uERbz9km';
+/* CONFIG — NOUVELLES CLÉS */
+const SUPABASE_URL = 'https://rwamqiewyslvjaezvauo.supabase.co';
+const SUPABASE_ANON_KEY = 'sb_publishable_Qze8yU3XxqI9cHaO9I1YCw_xsa7uEwu';
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
 /* STATE */
@@ -803,7 +803,7 @@ async function loadAll(){
   initRecapInputs();
 }
 
-/* SÉLECTEURS DE CONTEXTE (menu haut) */
+/* SÉLECTEURS DE CONTEXTE */
 function buildContextSelects(){
   const ownerSel = $('contextSelect');
   ownerSel.innerHTML = `<option value="">Tous les propriétaires</option>` +
@@ -840,7 +840,7 @@ function updateContextLabel(){
   $('contextLabel').textContent = parts.join(' · ');
 }
 
-/* FILTRES DANS LA TOOLBAR TRANSACTIONS */
+/* FILTRES TOOLBAR */
 function buildToolbarFilters(){
   const of = $('ownerFilter');
   of.innerHTML = `<option value="">Tous les propriétaires</option>` +
@@ -911,7 +911,6 @@ function renderDashboard(){
   const txs = state.transactions.filter(inContext);
   const completed = txs.filter(t => t.status === 'completed');
 
-  // Liquidité : seulement les storages du contexte
   let liquidity = 0;
   if(state.contextStorageId){
     liquidity = storageBalance(state.contextStorageId);
