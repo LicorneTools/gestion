@@ -32,32 +32,20 @@ input,select,textarea{font-family:inherit;font-size:inherit;color:inherit}
 input:focus,select:focus,textarea:focus{outline:none}
 .hidden{display:none !important}
 
-/* ===== ANIMATIONS ===== */
 @keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
 @keyframes fadeIn{from{opacity:0}to{opacity:1}}
 @keyframes scaleIn{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:none}}
 .anim-up{animation:fadeUp .5s cubic-bezier(.2,.7,.2,1) both}
 .anim-scale{animation:scaleIn .3s cubic-bezier(.2,.7,.2,1) both}
 
-/* ===== AUTH ===== */
-.auth-shell{
-  min-height:100dvh;display:grid;place-items:center;padding:24px;
+/* AUTH */
+.auth-shell{min-height:100dvh;display:grid;place-items:center;padding:24px;
   background:
     radial-gradient(ellipse at top, rgba(168,132,106,.1), transparent 60%),
     radial-gradient(ellipse at bottom right, rgba(168,132,106,.05), transparent 50%),
-    var(--bg);
-}
-.auth-card{
-  width:100%;max-width:400px;background:var(--panel);
-  border:1px solid var(--line);border-radius:24px;padding:40px 32px;box-shadow:var(--shadow);
-}
-.brand-mark{
-  width:52px;height:52px;border-radius:14px;
-  background:linear-gradient(145deg,var(--brown),var(--brown-2));
-  color:#0a0a0a;font-family:'Cormorant Garamond',serif;
-  font-weight:600;font-size:20px;display:grid;place-items:center;
-  margin-bottom:24px;letter-spacing:-0.02em;
-}
+    var(--bg);}
+.auth-card{width:100%;max-width:400px;background:var(--panel);border:1px solid var(--line);border-radius:24px;padding:40px 32px;box-shadow:var(--shadow)}
+.brand-mark{width:52px;height:52px;border-radius:14px;background:linear-gradient(145deg,var(--brown),var(--brown-2));color:#0a0a0a;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:20px;display:grid;place-items:center;margin-bottom:24px;letter-spacing:-0.02em}
 .eyebrow{font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--brown);margin-bottom:8px}
 .auth-card h1{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:38px;line-height:1.1;letter-spacing:-0.02em;margin-bottom:8px}
 .auth-card h1 em{font-style:italic;color:var(--brown);font-weight:400}
@@ -66,36 +54,17 @@ input:focus,select:focus,textarea:focus{outline:none}
 .auth-card label{display:grid;gap:6px;font-size:12px;color:var(--muted);font-weight:500}
 .auth-card input{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:12px 14px;font-size:14px;transition:border-color .2s}
 .auth-card input:focus{border-color:var(--brown);background:#0f0f0f}
-.primary{
-  background:var(--text);color:#0a0a0a;font-weight:600;padding:12px 18px;
-  border-radius:10px;font-size:13px;transition:transform .15s,background .2s,box-shadow .2s;
-  display:inline-flex;align-items:center;gap:6px;justify-content:center;
-}
+.primary{background:var(--text);color:#0a0a0a;font-weight:600;padding:12px 18px;border-radius:10px;font-size:13px;transition:transform .15s,background .2s,box-shadow .2s;display:inline-flex;align-items:center;gap:6px;justify-content:center}
 .primary:hover{background:#fff;transform:translateY(-1px);box-shadow:0 8px 24px -8px rgba(255,255,255,.2)}
 .primary.full{width:100%;padding:14px;margin-top:8px}
 .error{color:var(--red);font-size:12px;min-height:16px}
 
-/* ===== APP + FLOATING TOP NAV ===== */
+/* APP + NAV */
 .app{min-height:100dvh;padding-top:88px}
 .topnav{position:fixed;top:0;left:0;right:0;z-index:50;padding:16px 24px;pointer-events:none}
-.topnav-inner{
-  pointer-events:auto;max-width:1400px;margin:0 auto;
-  display:flex;align-items:center;gap:16px;
-  background:rgba(20,20,20,.72);
-  backdrop-filter:blur(20px) saturate(1.4);
-  -webkit-backdrop-filter:blur(20px) saturate(1.4);
-  border:1px solid var(--line);border-radius:18px;padding:10px 14px;
-  box-shadow:0 10px 40px -12px rgba(0,0,0,.6);
-  animation:fadeUp .5s cubic-bezier(.2,.7,.2,1) both;
-  position:relative;
-}
-.brand{display:flex;align-items:center;gap:10px;padding-right:14px;border-right:1px solid var(--line)}
-.brand span{
-  width:32px;height:32px;border-radius:9px;
-  background:linear-gradient(145deg,var(--brown),var(--brown-2));
-  color:#0a0a0a;font-family:'Cormorant Garamond',serif;
-  font-weight:600;font-size:14px;display:grid;place-items:center;
-}
+.topnav-inner{pointer-events:auto;max-width:1400px;margin:0 auto;display:flex;align-items:center;gap:12px;background:rgba(20,20,20,.72);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border:1px solid var(--line);border-radius:18px;padding:10px 14px;box-shadow:0 10px 40px -12px rgba(0,0,0,.6);animation:fadeUp .5s cubic-bezier(.2,.7,.2,1) both;position:relative}
+.brand{display:flex;align-items:center;gap:10px;padding-right:14px;border-right:1px solid var(--line);flex-shrink:0}
+.brand span{width:32px;height:32px;border-radius:9px;background:linear-gradient(145deg,var(--brown),var(--brown-2));color:#0a0a0a;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:14px;display:grid;place-items:center}
 .brand strong{display:block;font-size:12px;font-weight:600;line-height:1.1}
 .brand small{color:var(--muted);font-size:10px}
 .nav-toggle{display:none;width:36px;height:36px;border-radius:9px;color:var(--text);font-size:18px;border:1px solid var(--line);background:var(--bg-2);align-items:center;justify-content:center;transition:all .2s}
@@ -106,15 +75,17 @@ input:focus,select:focus,textarea:focus{outline:none}
 .nav:hover{background:var(--panel);color:var(--text)}
 .nav.active{background:var(--brown-soft);color:var(--brown);font-weight:600}
 .nav.active::after{content:'';position:absolute;bottom:-1px;left:50%;transform:translateX(-50%);width:16px;height:2px;background:var(--brown);border-radius:1px}
-.topnav-actions{display:flex;align-items:center;gap:6px}
-.context-select,.global-search{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:12px;color:var(--text);transition:border-color .2s}
-.context-select{cursor:pointer;max-width:160px}
-.context-select:focus,.global-search:focus{border-color:var(--brown)}
-.global-search{width:140px}
-.icon-btn{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:var(--muted);font-size:14px;border:1px solid var(--line);transition:all .2s}
+.topnav-actions{display:flex;align-items:center;gap:6px;flex-shrink:0}
+.context-select{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:12px;color:var(--text);transition:border-color .2s;cursor:pointer;max-width:130px}
+.context-select:focus{border-color:var(--brown)}
+#contextSelect{max-width:130px}
+#storageSelect{max-width:130px}
+.global-search{background:var(--bg-2);border:1px solid var(--line);border-radius:8px;padding:7px 10px;font-size:12px;color:var(--text);transition:border-color .2s;width:120px}
+.global-search:focus{border-color:var(--brown)}
+.icon-btn{width:32px;height:32px;border-radius:8px;display:grid;place-items:center;color:var(--muted);font-size:14px;border:1px solid var(--line);transition:all .2s;flex-shrink:0}
 .icon-btn:hover{color:var(--text);border-color:var(--line-2);background:var(--panel)}
 
-/* ===== MAIN ===== */
+/* MAIN */
 .main{max-width:1400px;margin:0 auto;padding:0 24px 80px}
 .page{animation:fadeUp .4s cubic-bezier(.2,.7,.2,1) both}
 .page-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;margin-bottom:24px;flex-wrap:wrap}
@@ -165,8 +136,8 @@ input:focus,select:focus,textarea:focus{outline:none}
 .chip:hover{color:var(--text);border-color:var(--line-2)}
 .chip.active{background:var(--brown-soft);border-color:var(--brown);color:var(--brown);font-weight:600}
 
-.toolbar{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:10px;margin-bottom:20px}
-.toolbar input,.toolbar select{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 14px;font-size:13px;transition:border-color .2s}
+.toolbar{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr 1fr 1fr;gap:10px;margin-bottom:20px}
+.toolbar input,.toolbar select{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:11px 14px;font-size:13px;transition:border-color .2s;min-width:0}
 .toolbar input:focus,.toolbar select:focus{border-color:var(--brown)}
 
 .table-wrap{overflow-x:auto;margin:-4px}
@@ -183,10 +154,12 @@ input:focus,select:focus,textarea:focus{outline:none}
 .card h3{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;margin:12px 0 4px;letter-spacing:-0.01em}
 .card .big{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:30px;margin:14px 0 4px;letter-spacing:-0.02em}
 .card .muted{font-size:12px;color:var(--muted)}
-.card-actions{display:flex;gap:6px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+.card-actions{display:flex;gap:6px;margin-top:14px;padding-top:14px;border-top:1px solid var(--line);flex-wrap:wrap}
 .card-actions button{font-size:11px;color:var(--muted);padding:4px 8px;border-radius:6px;transition:all .15s}
 .card-actions button:hover{background:var(--panel-2);color:var(--text)}
 .card-actions button.danger:hover{color:var(--red)}
+.card-actions button.primary-link{color:var(--brown);font-weight:600}
+.card-actions button.primary-link:hover{background:var(--brown-soft);color:var(--brown)}
 
 .forecast-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:16px}
 .warnings{margin-top:16px;display:flex;flex-direction:column;gap:8px}
@@ -217,6 +190,26 @@ input:focus,select:focus,textarea:focus{outline:none}
 .delta.down{background:rgba(194,94,94,.15);color:var(--red)}
 .delta.flat{background:var(--brown-soft);color:var(--brown)}
 
+.recap-context{
+  display:flex;gap:8px;align-items:center;flex-wrap:wrap;
+  padding:14px 18px;margin-bottom:16px;
+  background:var(--panel);border:1px solid var(--line);border-radius:14px;
+  font-size:12px;color:var(--muted);
+  animation:fadeUp .3s both;
+}
+.recap-context .tag{
+  background:var(--brown-soft);color:var(--brown);
+  padding:4px 10px;border-radius:6px;
+  font-weight:600;font-size:11px;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.recap-context .tag button{
+  color:var(--brown);font-size:12px;
+  width:14px;height:14px;border-radius:4px;
+  display:grid;place-items:center;
+}
+.recap-context .tag button:hover{background:rgba(168,132,106,.2)}
+
 /* CALENDAR */
 .calendar-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
 .cal-cell{background:var(--bg-2);border:1px solid var(--line);border-radius:10px;padding:10px;min-height:100px;font-size:11px;position:relative;transition:border-color .2s}
@@ -245,21 +238,26 @@ input:focus,select:focus,textarea:focus{outline:none}
 .empty{text-align:center;padding:60px 20px;color:var(--muted)}
 .empty h4{font-family:'Cormorant Garamond',serif;font-weight:500;font-size:22px;color:var(--text);margin-bottom:8px}
 
-/* ===== RESPONSIVE ===== */
+/* RESPONSIVE */
+@media (max-width:1300px){
+  .toolbar{grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:8px}
+  .toolbar #ownerFilter,.toolbar #storageFilter{grid-column:span 1}
+  .toolbar #fromDate,.toolbar #toDate{grid-column:span 1}
+}
 @media (max-width:1100px){
   .hero-grid{grid-template-columns:1fr 1fr}
   .stats,.forecast-cards{grid-template-columns:1fr 1fr}
   .grid-2{grid-template-columns:1fr}
-  .toolbar{grid-template-columns:1fr 1fr 1fr}
   .topnav-actions .global-search{display:none}
+  .toolbar{grid-template-columns:1fr 1fr 1fr 1fr}
 }
 @media (max-width:900px){
   .app{padding-top:76px}
   .topnav{padding:10px 12px}
-  .topnav-inner{flex-wrap:nowrap;gap:10px;padding:8px 10px}
+  .topnav-inner{flex-wrap:wrap;gap:8px;padding:8px 10px}
   .brand{padding-right:10px;border-right:none}
   .brand > div{display:none}
-  .nav-toggle{display:flex;margin-left:auto;order:2}
+  .nav-toggle{display:flex;order:2;margin-left:auto}
   .nav-scroll{
     display:none;position:absolute;top:calc(100% + 8px);left:0;right:0;
     flex-direction:column;background:rgba(20,20,20,.96);
@@ -269,15 +267,18 @@ input:focus,select:focus,textarea:focus{outline:none}
     max-height:70dvh;overflow-y:auto;
     box-shadow:0 20px 60px -20px rgba(0,0,0,.8);
     animation:fadeUp .25s cubic-bezier(.2,.7,.2,1) both;z-index:60;
+    order:10;width:100%;
   }
   .nav-scroll.open{display:flex}
   .nav-scroll .nav{padding:11px 14px;font-size:13.5px;border-radius:9px;text-align:left}
   .nav-scroll .nav.active::after{display:none}
-  .topnav-actions{order:1;gap:6px}
-  .topnav-actions .context-select{max-width:110px;font-size:11px;padding:6px 8px}
+  .topnav-actions{order:1;gap:6px;flex:1}
+  .topnav-actions .context-select{max-width:100px;font-size:11px;padding:6px 8px}
   .topnav-actions .icon-btn{width:30px;height:30px;font-size:13px}
   .page-title{font-size:34px}
   .hero-number{font-size:40px}
+  .toolbar{grid-template-columns:1fr 1fr}
+  .toolbar input,.toolbar select{font-size:12px;padding:10px}
 }
 @media (max-width:640px){
   .main{padding:0 14px 60px}
@@ -285,7 +286,7 @@ input:focus,select:focus,textarea:focus{outline:none}
   .page-head .primary{width:100%}
   .page-title{font-size:28px}
   .hero-grid,.stats,.forecast-cards,.form-grid{grid-template-columns:1fr}
-  .toolbar{grid-template-columns:1fr 1fr}
+  .toolbar{grid-template-columns:1fr}
   .recap-controls{grid-template-columns:1fr}
   .recap-controls .primary{width:100%}
   .cards{grid-template-columns:1fr}
@@ -294,11 +295,10 @@ input:focus,select:focus,textarea:focus{outline:none}
   .hero-number{font-size:36px}
   .movement{grid-template-columns:60px 1fr auto;gap:10px}
   .movement .badge{display:none}
-  .topnav-actions .context-select{max-width:90px}
+  .topnav-actions .context-select{max-width:80px}
   .topnav-actions .icon-btn[title="Exporter CSV"]{display:none}
 }
 @media (max-width:400px){
-  .stats,.forecast-cards,.toolbar{grid-template-columns:1fr}
   .calendar-grid{grid-template-columns:repeat(2,1fr)}
   .brand span{width:28px;height:28px;font-size:12px}
   .page-title{font-size:24px}
@@ -307,7 +307,7 @@ input:focus,select:focus,textarea:focus{outline:none}
 </head>
 <body>
 
-<!-- ============ AUTH ============ -->
+<!-- AUTH -->
 <div id="authView" class="auth-shell">
   <div class="auth-card anim-up">
     <div class="brand-mark">FO</div>
@@ -323,7 +323,7 @@ input:focus,select:focus,textarea:focus{outline:none}
   </div>
 </div>
 
-<!-- ============ APP ============ -->
+<!-- APP -->
 <div id="appView" class="app hidden">
   <header class="topnav">
     <div class="topnav-inner">
@@ -350,6 +350,7 @@ input:focus,select:focus,textarea:focus{outline:none}
 
       <div class="topnav-actions">
         <select id="contextSelect" class="context-select" title="Filtrer par propriétaire"></select>
+        <select id="storageSelect" class="context-select" title="Filtrer par compte"></select>
         <input id="globalSearch" class="global-search" placeholder="Rechercher…" type="search">
         <button id="exportBtn" class="ghost icon-btn" title="Exporter CSV">↓</button>
         <button id="settingsBtn" class="ghost icon-btn" title="Paramètres">⚙</button>
@@ -360,7 +361,7 @@ input:focus,select:focus,textarea:focus{outline:none}
 
   <main class="main">
 
-    <!-- ===== VUE D'ENSEMBLE ===== -->
+    <!-- VUE D'ENSEMBLE -->
     <section id="dashboard" class="page">
       <div class="page-head anim-up">
         <div>
@@ -413,7 +414,7 @@ input:focus,select:focus,textarea:focus{outline:none}
       </div>
     </section>
 
-    <!-- ===== TRANSACTIONS ===== -->
+    <!-- TRANSACTIONS -->
     <section id="transactions" class="page hidden">
       <div class="page-head anim-up">
         <div><p class="eyebrow">HISTORIQUE</p><h2 class="page-title">Transactions</h2></div>
@@ -445,6 +446,12 @@ input:focus,select:focus,textarea:focus{outline:none}
           <option value="planned">Planifié</option>
           <option value="cancelled">Annulé</option>
         </select>
+        <select id="ownerFilter">
+          <option value="">Tous les propriétaires</option>
+        </select>
+        <select id="storageFilter">
+          <option value="">Tous les comptes</option>
+        </select>
         <input id="fromDate" type="date">
         <input id="toDate" type="date">
       </div>
@@ -452,7 +459,7 @@ input:focus,select:focus,textarea:focus{outline:none}
       <div class="panel anim-up"><div id="transactionsTable"></div></div>
     </section>
 
-    <!-- ===== RÉCAPITULATIF ===== -->
+    <!-- RÉCAPITULATIF -->
     <section id="recap" class="page hidden">
       <div class="page-head anim-up">
         <div>
@@ -460,6 +467,8 @@ input:focus,select:focus,textarea:focus{outline:none}
           <h2 class="page-title">Récapitulatif par période</h2>
         </div>
       </div>
+
+      <div class="recap-context anim-up" id="recapContext"></div>
 
       <div class="panel anim-up">
         <div class="recap-controls">
@@ -530,7 +539,7 @@ input:focus,select:focus,textarea:focus{outline:none}
       </div>
     </section>
 
-    <!-- ===== PRÉVISIONS ===== -->
+    <!-- PRÉVISIONS -->
     <section id="forecast" class="page hidden">
       <div class="page-head anim-up">
         <div><p class="eyebrow">PROJECTION</p><h2 class="page-title">Prévisions</h2></div>
@@ -549,7 +558,7 @@ input:focus,select:focus,textarea:focus{outline:none}
       </div>
     </section>
 
-    <!-- ===== ANALYSES ===== -->
+    <!-- ANALYSES -->
     <section id="analytics" class="page hidden">
       <div class="page-head anim-up">
         <div><p class="eyebrow">ANALYSES</p><h2 class="page-title">Analyses</h2></div>
@@ -580,7 +589,7 @@ input:focus,select:focus,textarea:focus{outline:none}
       </div>
     </section>
 
-    <!-- ===== PROPRIÉTAIRES ===== -->
+    <!-- PROPRIÉTAIRES -->
     <section id="owners" class="page hidden">
       <div class="page-head anim-up">
         <div><p class="eyebrow">ENTITÉS</p><h2 class="page-title">Propriétaires</h2></div>
@@ -589,7 +598,7 @@ input:focus,select:focus,textarea:focus{outline:none}
       <div id="ownersGrid" class="cards"></div>
     </section>
 
-    <!-- ===== COMPTES ===== -->
+    <!-- COMPTES -->
     <section id="storages" class="page hidden">
       <div class="page-head anim-up">
         <div><p class="eyebrow">EMPLACEMENTS</p><h2 class="page-title">Comptes</h2></div>
@@ -598,7 +607,7 @@ input:focus,select:focus,textarea:focus{outline:none}
       <div id="storagesGrid" class="cards"></div>
     </section>
 
-    <!-- ===== CATÉGORIES ===== -->
+    <!-- CATÉGORIES -->
     <section id="categories" class="page hidden">
       <div class="page-head anim-up">
         <div><p class="eyebrow">CLASSIFICATION</p><h2 class="page-title">Catégories</h2></div>
@@ -607,7 +616,7 @@ input:focus,select:focus,textarea:focus{outline:none}
       <div id="categoriesGrid" class="cards"></div>
     </section>
 
-    <!-- ===== RÉCURRENCES ===== -->
+    <!-- RÉCURRENCES -->
     <section id="recurring" class="page hidden">
       <div class="page-head anim-up">
         <div><p class="eyebrow">RÉCURRENCES</p><h2 class="page-title">Règles récurrentes</h2></div>
@@ -616,7 +625,7 @@ input:focus,select:focus,textarea:focus{outline:none}
       <div id="recurringGrid" class="cards"></div>
     </section>
 
-    <!-- ===== PRÊTS ===== -->
+    <!-- PRÊTS -->
     <section id="loans" class="page hidden">
       <div class="page-head anim-up">
         <div><p class="eyebrow">CRÉDIT</p><h2 class="page-title">Prêts & créances</h2></div>
@@ -625,7 +634,7 @@ input:focus,select:focus,textarea:focus{outline:none}
       <div id="loansGrid" class="cards"></div>
     </section>
 
-    <!-- ===== CALENDRIER ===== -->
+    <!-- CALENDRIER -->
     <section id="calendar" class="page hidden">
       <div class="page-head anim-up">
         <div><p class="eyebrow">AGENDA</p><h2 class="page-title">Calendrier financier</h2></div>
@@ -634,7 +643,7 @@ input:focus,select:focus,textarea:focus{outline:none}
       <div class="panel anim-up"><div id="calendarGrid" class="calendar-grid"></div></div>
     </section>
 
-    <!-- ===== PARAMÈTRES ===== -->
+    <!-- PARAMÈTRES -->
     <section id="settings" class="page hidden">
       <div class="page-head anim-up">
         <div><p class="eyebrow">COMPTE</p><h2 class="page-title">Paramètres</h2></div>
@@ -664,7 +673,7 @@ input:focus,select:focus,textarea:focus{outline:none}
   </main>
 </div>
 
-<!-- ============ MODAL ============ -->
+<!-- MODAL -->
 <div id="modal" class="modal hidden">
   <div class="modal-card anim-scale">
     <button id="closeModal" class="close">×</button>
@@ -674,28 +683,27 @@ input:focus,select:focus,textarea:focus{outline:none}
 
 <script>
 /* =========================================================
-   FINANCIAL OS — Monopage
-   Modules : CONFIG · STATE · UTILS · AUTH · DB · CONTEXT ·
-             RENDER · CRUD · FORECAST · ANALYTICS · RECAP · UI
+   FINANCIAL OS — Monopage avec filtre PROPRIÉTAIRE + COMPTE
    ========================================================= */
 
-/* ========== CONFIG ========== */
+/* CONFIG */
 const SUPABASE_URL = 'https://wdehjriprvukkadrmleo.supabase.co';
 const SUPABASE_ANON_KEY = 'sb_publishable_CEDp94nnGylUliJW63q6wQ_uERbz9km';
 const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
-/* ========== STATE ========== */
+/* STATE */
 const state = {
   user: null,
   contextOwnerId: null,
+  contextStorageId: null,
   owners: [], storages: [], categories: [],
   transactions: [], loans: [], repayments: [], recurring: [],
   charts: {},
-  filters: { quickRange: 'month', from: null, to: null, type: '', status: '', search: '' },
+  filters: { quickRange: 'month', from: null, to: null, type: '', status: '', search: '', owner: '', storage: '' },
   recap: { from: null, to: null }
 };
 
-/* ========== UTILS ========== */
+/* UTILS */
 const $ = id => document.getElementById(id);
 const money = n => new Intl.NumberFormat('fr-FR',{maximumFractionDigits:0}).format(Number(n||0))+' Ar';
 const esc = s => String(s??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[m]));
@@ -707,44 +715,37 @@ const openModal  = html => { $('modalContent').innerHTML = html; show('modal'); 
 const closeModal = () => hide('modal');
 const nullify = v => (v === '' || v == null) ? null : v;
 
-/* ========== AUTH ========== */
+/* AUTH */
 async function init(){
   const { data:{ session } } = await sb.auth.getSession();
   if(session){ state.user = session.user; enterApp(); }
   else { show('authView'); hide('appView'); }
 }
-
 $('loginForm').addEventListener('submit', async e => {
   e.preventDefault();
   $('loginError').textContent = '';
   const btn = e.target.querySelector('button');
   btn.textContent = 'Connexion…'; btn.disabled = true;
-  const { data, error } = await sb.auth.signInWithPassword({
-    email: $('email').value, password: $('password').value
-  });
+  const { data, error } = await sb.auth.signInWithPassword({ email: $('email').value, password: $('password').value });
   btn.textContent = 'Entrer dans Financial OS'; btn.disabled = false;
   if(error){ $('loginError').textContent = error.message; return; }
   state.user = data.user; enterApp();
 });
-
 $('logoutBtn').onclick = async () => { await sb.auth.signOut(); location.reload(); };
-
 async function enterApp(){
   hide('authView'); show('appView');
   if(state.user) $('currentEmail').value = state.user.email || '';
   await loadAll();
 }
 
-/* ========== PARAMÈTRES ========== */
+/* SETTINGS */
 $('settingsBtn').onclick = () => navigate('settings');
-
 $('emailForm').onsubmit = async e => {
   e.preventDefault();
   $('emailMsg').textContent = 'Mise à jour…';
   const { error } = await sb.auth.updateUser({ email: $('newEmail').value });
   $('emailMsg').textContent = error ? error.message : 'Vérifiez votre boîte mail pour confirmer.';
 };
-
 $('pwdForm').onsubmit = async e => {
   e.preventDefault();
   const p = $('newPwd').value, c = $('confirmPwd').value;
@@ -754,16 +755,14 @@ $('pwdForm').onsubmit = async e => {
   $('pwdMsg').textContent = error ? error.message : 'Mot de passe mis à jour ✓';
 };
 
-/* ========== NAVIGATION ========== */
+/* NAVIGATION */
 document.querySelectorAll('.nav').forEach(b => b.onclick = () => navigate(b.dataset.page));
 document.querySelectorAll('[data-page-link]').forEach(b => b.onclick = () => navigate(b.dataset.pageLink));
-
 function navigate(page){
   document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
   $(page).classList.remove('hidden');
   document.querySelectorAll('.nav').forEach(n => n.classList.toggle('active', n.dataset.page === page));
   $('mainNav').classList.remove('open');
-
   if(page === 'transactions') renderTransactions();
   if(page === 'recap')        renderRecap();
   if(page === 'forecast')     renderForecast();
@@ -773,16 +772,13 @@ function navigate(page){
   window.scrollTo({top:0, behavior:'smooth'});
 }
 
-/* ========== MENU MOBILE ========== */
-$('navToggle').onclick = e => {
-  e.stopPropagation();
-  $('mainNav').classList.toggle('open');
-};
+/* MENU MOBILE */
+$('navToggle').onclick = e => { e.stopPropagation(); $('mainNav').classList.toggle('open'); };
 document.addEventListener('click', e => {
   if(!e.target.closest('.topnav-inner')) $('mainNav').classList.remove('open');
 });
 
-/* ========== CHARGEMENT DES DONNÉES ========== */
+/* CHARGEMENT */
 async function loadAll(){
   const uid = state.user.id;
   const [o,s,c,t,l,rp,r] = await Promise.all([
@@ -801,36 +797,74 @@ async function loadAll(){
   state.loans        = l.data || [];
   state.repayments   = rp.data || [];
   state.recurring    = r.data || [];
-
-  buildContextSelect();
+  buildContextSelects();
+  buildToolbarFilters();
   renderAll();
   initRecapInputs();
 }
 
-/* ========== CONTEXTE GLOBAL ========== */
-function buildContextSelect(){
-  const sel = $('contextSelect');
-  const current = state.contextOwnerId;
-  sel.innerHTML = `<option value="">Tous les comptes</option>` +
+/* SÉLECTEURS DE CONTEXTE (menu haut) */
+function buildContextSelects(){
+  const ownerSel = $('contextSelect');
+  ownerSel.innerHTML = `<option value="">Tous les propriétaires</option>` +
     state.owners.filter(o => o.is_active).map(o =>
       `<option value="${o.id}">${esc(o.name)}</option>`).join('');
-  sel.value = current || '';
+  ownerSel.value = state.contextOwnerId || '';
+
+  const storageSel = $('storageSelect');
+  storageSel.innerHTML = `<option value="">Tous les comptes</option>` +
+    state.storages.filter(s => s.is_active).map(s =>
+      `<option value="${s.id}">${esc(s.name)}</option>`).join('');
+  storageSel.value = state.contextStorageId || '';
 }
 
 $('contextSelect').onchange = e => {
   state.contextOwnerId = e.target.value || null;
-  const owner = state.owners.find(o => o.id === state.contextOwnerId);
-  $('contextLabel').textContent = owner ? owner.name : 'Tous les comptes';
+  updateContextLabel();
   renderAll();
+  initRecapInputs();
+};
+$('storageSelect').onchange = e => {
+  state.contextStorageId = e.target.value || null;
+  updateContextLabel();
+  renderAll();
+  initRecapInputs();
 };
 
-/* ========== FILTRES CONTEXTUELS ========== */
-function inContext(tx){
-  if(!state.contextOwnerId) return true;
-  return tx.owner_id === state.contextOwnerId || tx.counterparty_owner_id === state.contextOwnerId;
+function updateContextLabel(){
+  const owner = state.owners.find(o => o.id === state.contextOwnerId);
+  const storage = state.storages.find(s => s.id === state.contextStorageId);
+  const parts = [];
+  parts.push(owner ? owner.name : 'Tous les propriétaires');
+  if(storage) parts.push(storage.name);
+  $('contextLabel').textContent = parts.join(' · ');
 }
 
-/* ========== CALCULS ========== */
+/* FILTRES DANS LA TOOLBAR TRANSACTIONS */
+function buildToolbarFilters(){
+  const of = $('ownerFilter');
+  of.innerHTML = `<option value="">Tous les propriétaires</option>` +
+    state.owners.map(o => `<option value="${o.id}">${esc(o.name)}</option>`).join('');
+  of.value = state.filters.owner || '';
+
+  const sf = $('storageFilter');
+  sf.innerHTML = `<option value="">Tous les comptes</option>` +
+    state.storages.map(s => `<option value="${s.id}">${esc(s.name)}</option>`).join('');
+  sf.value = state.filters.storage || '';
+}
+
+/* FILTRE CONTEXTUEL CROISÉ */
+function inContext(tx){
+  if(state.contextOwnerId
+     && tx.owner_id !== state.contextOwnerId
+     && tx.counterparty_owner_id !== state.contextOwnerId) return false;
+  if(state.contextStorageId
+     && tx.source_storage_id !== state.contextStorageId
+     && tx.destination_storage_id !== state.contextStorageId) return false;
+  return true;
+}
+
+/* CALCULS */
 function txSigned(t){
   if(t.status === 'cancelled') return 0;
   if(t.transaction_type === 'expense') return -Number(t.amount);
@@ -857,7 +891,7 @@ const ownerName   = id => state.owners.find(o => o.id === id)?.name || '—';
 const storageName = id => state.storages.find(s => s.id === id)?.name || '—';
 const emptyHTML   = (t, s) => `<div class="empty"><h4>${esc(t)}</h4><p>${esc(s)}</p></div>`;
 
-/* ========== RENDU GLOBAL ========== */
+/* RENDU GLOBAL */
 function renderAll(){
   renderDashboard();
   renderOwners();
@@ -872,11 +906,19 @@ function renderAll(){
   if(!$('calendar').classList.contains('hidden'))     renderCalendar();
 }
 
-/* ========== TABLEAU DE BORD ========== */
+/* DASHBOARD */
 function renderDashboard(){
   const txs = state.transactions.filter(inContext);
   const completed = txs.filter(t => t.status === 'completed');
-  const liquidity = state.storages.reduce((s,x) => s + storageBalance(x.id), 0);
+
+  // Liquidité : seulement les storages du contexte
+  let liquidity = 0;
+  if(state.contextStorageId){
+    liquidity = storageBalance(state.contextStorageId);
+  } else {
+    liquidity = state.storages.reduce((s,x) => s + storageBalance(x.id), 0);
+  }
+
   const income  = completed.filter(t => t.transaction_type==='income'  && t.transaction_date >= monthStart())
                            .reduce((s,t) => s + Number(t.amount), 0);
   const expense = completed.filter(t => t.transaction_type==='expense' && t.transaction_date >= monthStart())
@@ -923,14 +965,13 @@ function movementHTML(t){
   </div>`;
 }
 
-/* ========== ALERTES ========== */
+/* ALERTES */
 function renderAlerts(){
   const alerts = [];
   [7,30,90].forEach(d => {
     const v = projectedBalance(d);
     if(v < 0) alerts.push({ type:'warn', icon:'⚠', text:`Solde projeté négatif dans ${d} jours (${money(v)}).` });
   });
-
   const upcoming = state.transactions
     .filter(t => t.status === 'planned' && inContext(t))
     .filter(t => { const d = new Date(t.transaction_date); const now = new Date();
@@ -938,15 +979,13 @@ function renderAlerts(){
     .sort((a,b) => a.transaction_date.localeCompare(b.transaction_date))
     .slice(0,3);
   upcoming.forEach(t => alerts.push({
-    type: 'warn', icon:'🗓',
+    type:'warn', icon:'🗓',
     text:`${t.transaction_type === 'income' ? 'Entrée' : 'Dépense'} à venir : ${esc(t.reason)} — ${money(t.amount)} le ${fmtDate(t.transaction_date)}.`
   }));
-
   const overdue = state.loans.filter(l => l.status !== 'paid' && l.status !== 'cancelled'
     && l.due_date && l.due_date < today());
   overdue.forEach(l => alerts.push({ type:'warn', icon:'⏰',
     text:`Prêt en retard : ${esc(ownerName(l.borrower_owner_id))} doit ${money(Number(l.principal_amount)-Number(l.repaid_amount))} depuis le ${fmtDate(l.due_date)}.` }));
-
   const income = state.transactions.filter(t => t.status==='completed' && inContext(t)
     && t.transaction_type==='income' && t.transaction_date >= monthStart())
     .reduce((s,t) => s + Number(t.amount), 0);
@@ -955,14 +994,12 @@ function renderAlerts(){
     .reduce((s,t) => s + Number(t.amount), 0);
   if(income - expense > 0) alerts.push({ type:'ok', icon:'✓', text:`Flux de trésorerie positif ce mois : ${money(income-expense)}.` });
   if(alerts.length === 0) alerts.push({ type:'ok', icon:'✓', text:'Tout est en ordre. Aucune alerte.' });
-
   $('alertsList').innerHTML = alerts.slice(0,6).map(a =>
     `<div class="alert ${a.type}"><span class="icon">${a.icon}</span><span>${a.text}</span></div>`).join('');
 }
 
-/* ========== GRAPHIQUES ========== */
+/* GRAPHIQUES */
 const CHART_COLORS = ['#a8846a','#c9a689','#8a6a52','#7fb069','#c25e5e','#6b8cae','#b08ca6','#d4b896'];
-
 function chart(id, type, data, options = {}){
   if(state.charts[id]) state.charts[id].destroy();
   if(!$(id)) return;
@@ -980,7 +1017,6 @@ function chart(id, type, data, options = {}){
     }
   });
 }
-
 function renderCharts(){
   const txs = state.transactions.filter(inContext);
   const labels = [], vals = [];
@@ -999,7 +1035,6 @@ function renderCharts(){
       borderWidth:2, tension:.35, fill:true, pointBackgroundColor:'#a8846a', pointRadius:3
     }]
   });
-
   const cats = state.categories.map(c => ({
     name:c.name,
     total: txs.filter(t => t.status==='completed' && t.transaction_type==='expense' && t.category_id===c.id)
@@ -1011,12 +1046,14 @@ function renderCharts(){
   });
 }
 
-/* ========== TRANSACTIONS ========== */
-['searchTx','typeFilter','statusFilter','fromDate','toDate'].forEach(id =>
+/* TRANSACTIONS */
+['searchTx','typeFilter','statusFilter','ownerFilter','storageFilter','fromDate','toDate'].forEach(id =>
   $(id).addEventListener('input', () => {
     state.filters.search = $('searchTx').value;
     state.filters.type = $('typeFilter').value;
     state.filters.status = $('statusFilter').value;
+    state.filters.owner = $('ownerFilter').value;
+    state.filters.storage = $('storageFilter').value;
     state.filters.from = $('fromDate').value;
     state.filters.to = $('toDate').value;
     renderTransactions();
@@ -1029,7 +1066,6 @@ document.querySelectorAll('#quickFilters .chip').forEach(chip => chip.onclick = 
   applyQuickRange();
   renderTransactions();
 });
-
 function applyQuickRange(){
   const now = new Date();
   const f = state.filters;
@@ -1047,7 +1083,6 @@ function applyQuickRange(){
   $('fromDate').value = from || ''; $('toDate').value = to || '';
   f.from = from; f.to = to;
 }
-
 function renderTransactions(){
   let list = state.transactions.filter(inContext);
   const f = state.filters;
@@ -1056,6 +1091,8 @@ function renderTransactions(){
     (!q || `${t.reason} ${catName(t.category_id)} ${ownerName(t.owner_id)}`.toLowerCase().includes(q)) &&
     (!f.type || t.transaction_type === f.type) &&
     (!f.status || t.status === f.status) &&
+    (!f.owner || t.owner_id === f.owner || t.counterparty_owner_id === f.owner) &&
+    (!f.storage || t.source_storage_id === f.storage || t.destination_storage_id === f.storage) &&
     (!f.from || t.transaction_date >= f.from) &&
     (!f.to || t.transaction_date <= f.to)
   );
@@ -1079,10 +1116,10 @@ function renderTransactions(){
       </tr>`).join('')}</tbody></table></div>`;
 }
 
+/* MODAL TRANSACTION */
 $('newTxBtn').onclick = () => transactionModal();
 $('newTxBtn2').onclick = () => transactionModal();
 $('newPlannedBtn').onclick = () => transactionModal({ status:'planned' });
-
 function transactionModal(defaults = {}){
   openModal(`<h3>${defaults.status === 'planned' ? 'Transaction planifiée' : 'Nouvelle transaction'}</h3>
     <form id="txForm" class="form-grid">
@@ -1117,7 +1154,7 @@ function transactionModal(defaults = {}){
   };
 }
 
-/* ========== PROPRIÉTAIRES ========== */
+/* PROPRIÉTAIRES */
 $('addOwnerBtn').onclick = () => modalSimple('Nouveau propriétaire',
   `<label>Nom<input name="name" required></label>
    <label>Type<select name="owner_type"><option value="individual">Individu</option><option value="company">Entreprise</option><option value="other">Autre</option></select></label>
@@ -1130,13 +1167,15 @@ function renderOwners(){
   const types = { individual:'Individu', company:'Entreprise', other:'Autre' };
   grid.innerHTML = list.map(o => {
     const net = ownerNetWorth(o.id);
-    return `<div class="card">
+    const isCurrent = state.contextOwnerId === o.id;
+    return `<div class="card" style="${isCurrent?'border-color:var(--brown)':''}">
       <span class="badge">${esc(types[o.owner_type] || o.owner_type)}${o.is_active?'':' · inactif'}</span>
       <h3>${esc(o.name)}</h3>
       <p class="muted">${esc(o.description || '')}</p>
       <div class="big">${money(net)}</div>
       <small class="muted">Position nette des mouvements</small>
       <div class="card-actions">
+        <button class="primary-link" onclick="viewOwnerRecap('${o.id}')">Voir le récap →</button>
         <button onclick="toggleActive('owners','${o.id}',${!o.is_active})">${o.is_active?'Désactiver':'Activer'}</button>
         <button class="danger" onclick="deleteEntity('owners','${o.id}')">Supprimer</button>
       </div>
@@ -1144,7 +1183,7 @@ function renderOwners(){
   }).join('');
 }
 
-/* ========== COMPTES ========== */
+/* COMPTES */
 $('addStorageBtn').onclick = () => modalSimple('Nouveau compte',
   `<label>Nom<input name="name" required></label>
    <label>Type<select name="storage_type">
@@ -1160,20 +1199,40 @@ function renderStorages(){
   const grid = $('storagesGrid');
   if(!state.storages.length){ grid.innerHTML = emptyHTML('Aucun compte', 'Ajoutez un compte bancaire, un portefeuille ou un compte mobile money.'); return; }
   const types = { bank:'Banque', cash:'Espèces', mobile_money:'Mobile Money', savings:'Épargne', investment:'Investissement', other:'Autre' };
-  grid.innerHTML = state.storages.map(s => `<div class="card">
-    <span class="badge">${esc(types[s.storage_type] || s.storage_type)}${s.is_active?'':' · inactif'}</span>
-    <h3>${esc(s.name)}</h3>
-    <p class="muted">${esc(s.description || '')}</p>
-    <div class="big">${money(storageBalance(s.id))}</div>
-    <small class="muted">${esc(s.currency)}</small>
-    <div class="card-actions">
-      <button onclick="toggleActive('storages','${s.id}',${!s.is_active})">${s.is_active?'Désactiver':'Activer'}</button>
-      <button class="danger" onclick="deleteEntity('storages','${s.id}')">Supprimer</button>
-    </div>
-  </div>`).join('');
+  grid.innerHTML = state.storages.map(s => {
+    const isCurrent = state.contextStorageId === s.id;
+    return `<div class="card" style="${isCurrent?'border-color:var(--brown)':''}">
+      <span class="badge">${esc(types[s.storage_type] || s.storage_type)}${s.is_active?'':' · inactif'}</span>
+      <h3>${esc(s.name)}</h3>
+      <p class="muted">${esc(s.description || '')}</p>
+      <div class="big">${money(storageBalance(s.id))}</div>
+      <small class="muted">${esc(s.currency)}</small>
+      <div class="card-actions">
+        <button class="primary-link" onclick="viewStorageRecap('${s.id}')">Voir le récap →</button>
+        <button onclick="toggleActive('storages','${s.id}',${!s.is_active})">${s.is_active?'Désactiver':'Activer'}</button>
+        <button class="danger" onclick="deleteEntity('storages','${s.id}')">Supprimer</button>
+      </div>
+    </div>`;
+  }).join('');
 }
 
-/* ========== CATÉGORIES ========== */
+/* DRILL-DOWN */
+window.viewOwnerRecap = (ownerId) => {
+  state.contextOwnerId = ownerId;
+  $('contextSelect').value = ownerId;
+  updateContextLabel();
+  renderAll();
+  navigate('recap');
+};
+window.viewStorageRecap = (storageId) => {
+  state.contextStorageId = storageId;
+  $('storageSelect').value = storageId;
+  updateContextLabel();
+  renderAll();
+  navigate('recap');
+};
+
+/* CATÉGORIES */
 $('addCategoryBtn').onclick = () => modalSimple('Nouvelle catégorie',
   `<label>Nom<input name="name" required></label>
    <label>Type<select name="category_type"><option value="both">Les deux</option><option value="income">Revenu</option><option value="expense">Dépense</option></select></label>
@@ -1194,7 +1253,7 @@ function renderCategories(){
   </div>`).join('');
 }
 
-/* ========== RÉCURRENCES ========== */
+/* RÉCURRENCES */
 $('addRecurringBtn').onclick = () => modalSimple('Nouvelle règle récurrente',
   `<label>Motif<input name="reason" required></label>
    <label>Montant<input name="amount" type="number" step="0.01" required></label>
@@ -1226,7 +1285,7 @@ function renderRecurring(){
   </div>`).join('');
 }
 
-/* ========== PRÊTS ========== */
+/* PRÊTS */
 $('addLoanBtn').onclick = () => modalSimple('Nouveau prêt',
   `<label>Prêteur<select name="lender_owner_id">${state.owners.map(o=>`<option value="${o.id}">${esc(o.name)}</option>`).join('')}</select></label>
    <label>Emprunteur<select name="borrower_owner_id">${state.owners.map(o=>`<option value="${o.id}">${esc(o.name)}</option>`).join('')}</select></label>
@@ -1280,7 +1339,7 @@ window.repayLoan = async (loanId, remaining) => {
   };
 };
 
-/* ========== TOGGLE / SUPPRESSION ========== */
+/* TOGGLE / DELETE */
 window.toggleActive = async (table, id, val) => {
   await sb.from(table).update({ is_active: val }).eq('id', id);
   await loadAll();
@@ -1292,7 +1351,7 @@ window.deleteEntity = async (table, id) => {
   await loadAll();
 };
 
-/* ========== MODAL SIMPLE ========== */
+/* MODAL SIMPLE */
 function modalSimple(title, fields, table){
   openModal(`<h3>${title}</h3>
     <form id="simpleForm" class="form-grid">
@@ -1310,9 +1369,11 @@ function modalSimple(title, fields, table){
   };
 }
 
-/* ========== PRÉVISIONS ========== */
+/* PRÉVISIONS */
 function projectedBalance(days){
-  let total = state.storages.reduce((s,x) => s + storageBalance(x.id), 0);
+  let total = state.contextStorageId
+    ? storageBalance(state.contextStorageId)
+    : state.storages.reduce((s,x) => s + storageBalance(x.id), 0);
   for(let i=1;i<=days;i++){
     const d = new Date(); d.setDate(d.getDate()+i);
     const ds = d.toISOString().slice(0,10);
@@ -1333,10 +1394,8 @@ function projectedBalance(days){
   }
   return total;
 }
-
 function renderForecast(){
   [7,30,90,365].forEach(n => $('f'+n).textContent = money(projectedBalance(n)));
-
   const labels = [], data = [];
   for(let i=0;i<=90;i+=5){
     const d = new Date(); d.setDate(d.getDate()+i);
@@ -1351,19 +1410,17 @@ function renderForecast(){
       borderWidth:2, tension:.3, fill:true, pointRadius:0
     }]
   });
-
   $('forecastWarnings').innerHTML = [7,30,90,365]
     .map(n => projectedBalance(n) < 0
       ? `<div class="warning">Risque de trésorerie négative dans ${n} jours : solde projeté ${money(projectedBalance(n))}.</div>`
       : '').join('');
 }
 
-/* ========== ANALYSES ========== */
+/* ANALYSES */
 function renderAnalytics(){
   const txs = state.transactions.filter(inContext).filter(t => t.status === 'completed');
   const income  = txs.filter(t => t.transaction_type==='income' ).reduce((s,t) => s + Number(t.amount), 0);
   const expense = txs.filter(t => t.transaction_type==='expense').reduce((s,t) => s + Number(t.amount), 0);
-
   const labels = [], inc = [], exp = [];
   for(let i=5;i>=0;i--){
     const d = new Date(); d.setMonth(d.getMonth()-i);
@@ -1376,7 +1433,6 @@ function renderAnalytics(){
     { label:'Revenus',  data:inc, backgroundColor:'#7fb069', borderRadius:6 },
     { label:'Dépenses', data:exp, backgroundColor:'#a8846a', borderRadius:6 }
   ]});
-
   const incCats = state.categories.map(c => ({
     name:c.name, total: txs.filter(t => t.transaction_type==='income' && t.category_id===c.id).reduce((s,t) => s + Number(t.amount),0)
   })).filter(x => x.total);
@@ -1384,7 +1440,6 @@ function renderAnalytics(){
     labels: incCats.map(x => x.name),
     datasets:[{ data: incCats.map(x => x.total), backgroundColor: CHART_COLORS, borderColor:'#141414', borderWidth:2 }]
   });
-
   const expCats = state.categories.map(c => ({
     name:c.name, total: txs.filter(t => t.transaction_type==='expense' && t.category_id===c.id).reduce((s,t) => s + Number(t.amount),0)
   })).filter(x => x.total);
@@ -1392,7 +1447,6 @@ function renderAnalytics(){
     labels: expCats.map(x => x.name),
     datasets:[{ data: expCats.map(x => x.total), backgroundColor: CHART_COLORS, borderColor:'#141414', borderWidth:2 }]
   });
-
   const rate = income ? ((income - expense) / income * 100) : 0;
   $('analyticsList').innerHTML = `
     <div class="insight">Revenus totaux <strong>${money(income)}</strong></div>
@@ -1401,14 +1455,13 @@ function renderAnalytics(){
     <div class="insight">Taux d'épargne <strong>${rate.toFixed(1)}%</strong></div>`;
 }
 
-/* ========== RÉCAPITULATIF ========== */
+/* RÉCAPITULATIF */
 function initRecapInputs(){
   if(!state.recap.from) state.recap.from = monthStart();
   if(!state.recap.to)   state.recap.to   = today();
   $('recapFrom').value = state.recap.from;
   $('recapTo').value   = state.recap.to;
 }
-
 $('recapFrom').onchange = e => { state.recap.from = e.target.value; renderRecap(); };
 $('recapTo').onchange   = e => { state.recap.to   = e.target.value; renderRecap(); };
 $('recapApply').onclick = () => {
@@ -1416,14 +1469,12 @@ $('recapApply').onclick = () => {
   state.recap.to   = $('recapTo').value;
   renderRecap();
 };
-
 document.querySelectorAll('[data-recap]').forEach(chip => chip.onclick = () => {
   document.querySelectorAll('[data-recap]').forEach(c => c.classList.remove('active'));
   chip.classList.add('active');
   applyRecapPreset(chip.dataset.recap);
   renderRecap();
 });
-
 function applyRecapPreset(preset){
   const now = new Date();
   let from, to = today();
@@ -1448,7 +1499,6 @@ function applyRecapPreset(preset){
   $('recapFrom').value = from;
   $('recapTo').value = to;
 }
-
 function previousPeriod(from, to){
   const f = new Date(from+'T00:00:00');
   const t = new Date(to+'T00:00:00');
@@ -1457,13 +1507,11 @@ function previousPeriod(from, to){
   const prevFrom = new Date(prevTo.getTime() - (days-1)*86400000);
   return { from: prevFrom.toISOString().slice(0,10), to: prevTo.toISOString().slice(0,10) };
 }
-
 function txsInPeriod(from, to){
   return state.transactions.filter(inContext)
     .filter(t => t.status === 'completed')
     .filter(t => t.transaction_date >= from && t.transaction_date <= to);
 }
-
 function computeStats(from, to){
   const txs = txsInPeriod(from, to);
   const income  = txs.filter(t => t.transaction_type==='income' ).reduce((s,t) => s + Number(t.amount), 0);
@@ -1475,7 +1523,6 @@ function computeStats(from, to){
   const rate = income ? (net/income*100) : 0;
   return { txs, income, expense, transfers, gifts, loans, net, rate, count: txs.length };
 }
-
 function deltaBadge(current, previous){
   if(previous === 0 && current === 0) return `<span class="delta flat">—</span>`;
   if(previous === 0) return `<span class="delta up">nouveau</span>`;
@@ -1484,13 +1531,45 @@ function deltaBadge(current, previous){
   const arrow = pct > 0 ? '↑' : (pct < 0 ? '↓' : '→');
   return `<span class="delta ${cls}">${arrow} ${Math.abs(pct).toFixed(1)}%</span>`;
 }
-
 function daysBetween(from, to){
   return Math.max(1, Math.round((new Date(to) - new Date(from)) / 86400000) + 1);
 }
 
+function renderRecapContext(){
+  const owner = state.owners.find(o => o.id === state.contextOwnerId);
+  const storage = state.storages.find(s => s.id === state.contextStorageId);
+  const tags = [];
+  if(owner){
+    tags.push(`<span class="tag">Propriétaire : ${esc(owner.name)} <button onclick="clearOwnerContext()" title="Retirer">×</button></span>`);
+  }
+  if(storage){
+    tags.push(`<span class="tag">Compte : ${esc(storage.name)} <button onclick="clearStorageContext()" title="Retirer">×</button></span>`);
+  }
+  if(tags.length === 0){
+    tags.push(`<span style="font-size:12px">Contexte : <strong style="color:var(--text)">tous les propriétaires et tous les comptes</strong></span>`);
+  }
+  $('recapContext').innerHTML = tags.join('');
+}
+window.clearOwnerContext = () => {
+  state.contextOwnerId = null;
+  $('contextSelect').value = '';
+  updateContextLabel();
+  renderAll();
+  initRecapInputs();
+  renderRecap();
+};
+window.clearStorageContext = () => {
+  state.contextStorageId = null;
+  $('storageSelect').value = '';
+  updateContextLabel();
+  renderAll();
+  initRecapInputs();
+  renderRecap();
+};
+
 function renderRecap(){
   initRecapInputs();
+  renderRecapContext();
   const { from, to } = state.recap;
   const prev = previousPeriod(from, to);
   const cur = computeStats(from, to);
@@ -1543,7 +1622,6 @@ function renderRecap(){
     });
     return Object.entries(map).sort((a,b) => b[1]-a[1]).slice(0,6);
   };
-
   const renderCats = (list, container) => {
     const total = list.reduce((s,[,v]) => s+v, 0);
     $(container).innerHTML = list.length === 0
@@ -1629,22 +1707,19 @@ function exportCSV(txs, filename){
   URL.revokeObjectURL(url);
 }
 
-/* ========== CALENDRIER ========== */
+/* CALENDRIER */
 function renderCalendar(){
   const grid = $('calendarGrid');
   const now = new Date();
   const year = now.getFullYear(), month = now.getMonth();
   const daysInMonth = new Date(year, month+1, 0).getDate();
   const startDay = (new Date(year, month, 1).getDay() + 6) % 7;
-
   const events = {};
   const addEvent = (date, ev) => { (events[date] ||= []).push(ev); };
-
   state.transactions.filter(t => t.status === 'planned' && inContext(t)).forEach(t => addEvent(t.transaction_date, {
     type: t.transaction_type === 'income' ? 'income' : 'expense',
     label: `${t.reason} · ${money(t.amount)}`
   }));
-
   for(let i=1;i<=daysInMonth;i++){
     const d = new Date(year, month, i);
     const ds = d.toISOString().slice(0,10);
@@ -1662,7 +1737,6 @@ function renderCalendar(){
         });
       });
   }
-
   const dayNames = ['Lun','Mar','Mer','Jeu','Ven','Sam','Dim'];
   let html = dayNames.map(d => `<div class="cal-cell" style="min-height:auto;text-align:center;color:var(--muted);font-size:10px;letter-spacing:.1em;text-transform:uppercase">${d}</div>`).join('');
   for(let i=0;i<startDay;i++) html += `<div class="cal-cell" style="opacity:.2"></div>`;
@@ -1680,7 +1754,7 @@ function renderCalendar(){
   grid.innerHTML = html;
 }
 
-/* ========== RECHERCHE GLOBALE ========== */
+/* RECHERCHE GLOBALE */
 $('globalSearch').addEventListener('input', e => {
   const q = e.target.value.toLowerCase().trim();
   if(!q) return;
@@ -1695,17 +1769,18 @@ $('globalSearch').addEventListener('input', e => {
   }
 });
 
-/* ========== EXPORT GLOBAL ========== */
+/* EXPORT GLOBAL */
 $('exportBtn').onclick = () => {
   exportCSV(state.transactions.filter(inContext), `financial-os-${today()}.csv`);
 };
 
-/* ========== MODAL CLOSE ========== */
+/* MODAL CLOSE */
 $('closeModal').onclick = closeModal;
 $('modal').onclick = e => { if(e.target.id === 'modal') closeModal(); };
 
-/* ========== DÉMARRAGE ========== */
+/* DÉMARRAGE */
 init();
+updateContextLabel();
 </script>
 </body>
 </html>
